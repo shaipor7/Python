@@ -7,10 +7,10 @@ def main():
 
 def dollars_to_float(d):
     d = d.replace("$","")
-    return float(d, digit =)
+    return float(d)
 
 def percent_to_float(p):
     p = p.replace("%","")
-    return
+    return float(p)/100
 
 main()
