@@ -5,7 +5,7 @@ fruits = {
     "cantaloupe":50,
     "grapefruit":60,
     "grapes":90,
-    "honeydewmelon":50,
+    "honeydew melon":50,
     "kiwifruit":90,
     "lemon":15,
     "lime":20,
@@ -16,7 +16,7 @@ fruits = {
     "pineapple":50,
     "plums":70,
     "stawberries":50,
-    "sweetcherries":100,
+    "sweet cherries":100,
     "tangerine":50,
     "watermelon":80
 }
