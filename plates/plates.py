@@ -8,7 +8,7 @@ def main():
 
 def is_valid(s):
     for i in s:
-        if 
+        if s[0:2] .isnumeric()
 
 
 main()
