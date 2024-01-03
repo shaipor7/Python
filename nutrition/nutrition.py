@@ -20,8 +20,8 @@ fruits = {
     "tangerine":50,
     "watermelon":80
 }
-string = input("").strip().casefold()
+string = input("Item: ").strip().casefold()
 for i in fruits:
     if i == string:
-        print("", fruits[i])
+        print("Calories:", fruits[i])
 
