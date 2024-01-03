@@ -14,7 +14,7 @@ def is_valid(s):
         previous = s[0]
         for i in s:
             if (previous.isnumeric() and not(i.isnumeric())) or
-                (previous == '0' and or i in [".", " ", "'"]:
+                (previous == '0' and i.isnumeric()) or i in [".", " ", "'"]:
                 flag = False
                 break
             previous = i
