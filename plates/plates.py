@@ -11,11 +11,12 @@ def is_valid(s):
     if s[0:2].isnumeric() | not (2 < len(s) <= 6) :
         flag = False
     else:
-        for i in s:
-            if i.isnumeric():
-                if 
-
+        for i in range(len(s)):
+            if s[i].isnumeric() and not(s[i+1].isnumeric()):
+                flag = False
                 break
+            elif s[i] in [".", " ", " "]
+
     return flag
 
 main()
