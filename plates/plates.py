@@ -8,15 +8,13 @@ def main():
 
 def is_valid(s):
     flag = True
-    if s[0:2].isnumeric() | not (2 < len(s) <= 6) :
+    if s[0:2].isnumeric() or not(2 < len(s) <= 6) :
         flag = False
     else:
         for i in range(len(s)):
-            if s[i].isnumeric() and not(s[i+1].isnumeric()):
+            if (s[i].isnumeric() and not(s[i+1].isnumeric())) or s[i] in [".", " ", "'"]:
                 flag = False
                 break
-            elif s[i] in [".", " ", " "]
-
     return flag
 
 main()
