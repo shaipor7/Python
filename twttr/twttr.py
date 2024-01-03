@@ -1,5 +1,7 @@
 string = input("Input: ")
 string_casefold = string.casefold()
-for i in string_casefold:
-    if i != "a" | i != "e" | i != "i" | i != "o" | i != "u":
-        print()
+for i in range(len(string_casefold)):
+    if string_casefold[i] != "a":
+    # | i != "e" | i != "i" | i != "o" | i != "u":
+        print(string[i], end="")
+print()
