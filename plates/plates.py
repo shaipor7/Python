@@ -7,8 +7,13 @@ def main():
 
 
 def is_valid(s):
-    for i in s:
-        if s[0:2] .isnumeric()
+    flag = True
+    if s[0:2].isnumeric() | not (2 < len(s) <= 6) :
+        flag = False
+    else:
+        for i in s:
 
+                break
+    return flag
 
 main()
