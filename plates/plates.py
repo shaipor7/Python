@@ -12,7 +12,7 @@ def is_valid(s):
         flag = False
     else:
         for i in range(len(s)):
-            if (s[i].isnumeric() and not(s[i+1].isnumeric())) or s[i] in [".", " ", "'"]:
+            if (not(s[i].isnumeric()) and not(s[i+1].isnumeric())) or s[i] in [".", " ", "'"]:
                 flag = False
                 break
     return flag
