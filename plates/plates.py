@@ -17,8 +17,8 @@ def is_valid(s):
                 (previous == '0' and i.isnumeric()) or \
                 i in [".", " ", "'"]:
                 flag = False
-                previous = i
                 break
+            previous = i
     return flag
 
 main()
