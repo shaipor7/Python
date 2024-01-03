@@ -12,6 +12,8 @@ def is_valid(s):
         flag = False
     else:
         for i in s:
+            if i.isnumeric():
+                if 
 
                 break
     return flag
