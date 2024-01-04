@@ -12,14 +12,10 @@ def cal():
                 pass
             elif 1.00 >= fraction >= 0.99:
                 return "F"
-            elif fraction >= 0.625:
-                return "75%"
-            elif 0.625 > fraction >= 0.375:
-                return "50%"
-            elif 0.375 > fraction > 0.01:
-                return "25%"
-            else:
+            elif 0.01 >= fraction >= 0.00:
                 return "E"
+            else:
+                return round(fraction) + str("%")
         except (ValueError, ZeroDivisionError):
             pass
 main()
