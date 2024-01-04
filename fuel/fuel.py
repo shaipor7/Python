@@ -8,7 +8,9 @@ def cal():
             string = input("Fraction: ")
             list = string.split("/")
             fraction = int(list[0]) / int(list[1])
-            if 1.00 >= fraction >= 0.99:
+            if fraction > 1.00:
+                pass
+            elif 1.00 >= fraction >= 0.99:
                 return "F"
             elif fraction >= 0.625:
                 return "75%"
