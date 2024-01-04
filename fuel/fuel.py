@@ -3,7 +3,7 @@ try:
     list = string.split("/")
     fraction = int(list[0]) / int(list[1])
     if 1.00 >= fraction >= 0.99:
-        return "E"
+        return "F"
     elif fraction >= 0.75:
         return "75%"
     elif fraction >= 0.50:
