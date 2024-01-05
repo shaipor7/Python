@@ -13,5 +13,9 @@ menu = {
 while True:
     try:
         string = input("Item: ")
-        if string.title() == 
+        if string.title() in menu:
+            print(f"${menu[string.title()]:.2f}")
+    except EOFError:
+        print()
+        break
 
