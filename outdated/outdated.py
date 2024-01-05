@@ -22,9 +22,8 @@ while True:
                 print(f"{y}-{int(m):02}-{int(d):02}")
                 break
         else:
-            # Input = Input.replace(",", "")
+            Input = Input.replace(",", "")
             m,d,y = Input.split(" ")
-            d = d.split(",")
             if int(d) <=31:
                 for i in range(len(month)):
                     if m == month[i]:
