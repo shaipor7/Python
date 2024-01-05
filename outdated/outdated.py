@@ -16,7 +16,7 @@ month = [
 while True:
     try:
         Input = input("Date: ")
-        if Input[0]):
+        if Input[0]:
             m,d,y = Input.split("/")
             print(f"{y}-{int(m):02}-{int(d):02}")
         else:
