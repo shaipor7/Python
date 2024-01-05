@@ -6,5 +6,5 @@ while True:
         dict(string) == dict.get(string, 0) + 1
     except EOFError:
         for item in sorted(dict.keys()):
-            print()
+            print(f"{dict(item)} {item.upper()}")
 
