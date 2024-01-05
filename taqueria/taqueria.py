@@ -14,7 +14,7 @@ while True:
     try:
         string = input("Item: ")
         if string.title() in menu:
-            total += int(menu[string.title()])
+            total += float(menu[string.title()])
             print(f"Total: ${total:.2f}")
     except EOFError:
         print()
