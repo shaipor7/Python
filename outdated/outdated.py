@@ -16,4 +16,6 @@ month = [
 while True:
     try:
         Input = input("Date: ")
-        
+        a,b,c = Input.split("/")
+    except ValueError:
+        pass
