@@ -27,6 +27,7 @@ while True:
             for i in range(len(month)):
                 if m == month[i] and int(d) <=31:
                     print(f"{y}-{i+1:02}-{int(d):02}")
+                    break
 
     except ValueError:
         pass
