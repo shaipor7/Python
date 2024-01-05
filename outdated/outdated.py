@@ -17,7 +17,7 @@ while True:
     try:
         Input = input("Date: ")
         if int(Input[0]):
-            m,d,y = Input.split("/")
+            m,d,y = int(Input.split("/"))
             print(f"{y}-{m:02}-{d:02}")
         else:
             Input = Input.replace(",", "")
