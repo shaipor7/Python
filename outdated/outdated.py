@@ -20,14 +20,11 @@ while True:
             m,d,y = Input.split("/")
             print(f"{y}-{int(m):02}-{int(d):02}")
         else:
-            print(Input)
             Input = Input.replace(",", "")
-            print(Input)
             m,d,y = Input.split(" ")
-            print(m,d,y)
             for i in range(len(month)):
-                if m[i] == month:
-                    print(f"{y}-{m:02}-{int(d):02}")
+                if m == month[i]:
+                    print(f"{y}-{i:02}-{int(d):02}")
         break
     except ValueError:
         pass
