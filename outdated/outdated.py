@@ -17,14 +17,14 @@ while True:
     try:
         Input = input("Date: ")
         if int(Input[0]):
-            m,d,y = int(Input.split("/"))
-            print(f"{y}-{m:02}-{d:02}")
+            m,d,y = Input.split("/")
+            print(f"{y}-{int(m):02}-{int(d):02}")
         else:
             Input = Input.replace(",", "")
             m,d,y = Input.split(" ")
             for i in range(len(month)):
                 if m[i] == month:
-                    print(f"{y}-{m:02}-{d:02}")
+                    print(f"{y}-{m:02}-{int(d):02}")
         break
     except ValueError:
         pass
