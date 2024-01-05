@@ -16,11 +16,15 @@ month = [
 while True:
     try:
         Input = input("Date: ")
-        if Input[0] == int:
-            a,b,c = Input.split("/")
+        if Input[0] == int(Input):
+            m,d,y = Input.split("/")
+            print(f"{d:02}-{m:02}-{y}")
         else:
             Input = Input.replace(",", "")
-            a,b,c = Input.split(" ")
+            m,d,y = Input.split(" ")
+            for i in range(len(month)):
+                if m[i] == month:
+                    print(f"{d:02}-{i:02}-{y}")
         break
     except ValueError:
         pass
