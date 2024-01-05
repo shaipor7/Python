@@ -13,5 +13,5 @@ menu = {
 while True:
     try:
         string = input("Item: ")
-        if string.ca
+        if string.title() == 
 
