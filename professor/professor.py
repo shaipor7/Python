@@ -32,7 +32,11 @@ def get_level():
     return level
 
 def generate_integer(level):
-    return random.randint(1,10**level)
+    if level == 1:
+        return random.randint(0,9)
+    elif level == 2:
+        return random.randint(10,99)
+    else: return random.randint(100,999)
 
 if __name__ == "__main__":
     main()
