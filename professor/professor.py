@@ -24,7 +24,8 @@ def generate_integer(level):
                 break
             else:
                 print("EEE")
-
+                if i == 3:
+                    print(f"{x} + {y} = {x+y}")
 
 if __name__ == "__main__":
     main()
