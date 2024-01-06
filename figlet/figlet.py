@@ -1,5 +1,8 @@
 from pyfiglet import Figlet
 import sys
+import random
+
 figlet = Figlet()
 
-if len()
+if len(sys.argv) == 1:
+    
