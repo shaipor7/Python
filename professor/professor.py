@@ -17,7 +17,13 @@ def get_level():
 
 def generate_integer(level):
     for i in range(10):
-        x = random
+        x,y = random.randint(1,10*level)
+        for i in range(3):
+            Input = int(input(f"{x} + {y} = "))
+            if Input == (x+y):
+                break
+            else:
+                print("EEE")
 
 
 if __name__ == "__main__":
