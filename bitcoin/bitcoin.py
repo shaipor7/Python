@@ -9,7 +9,7 @@ except:
 
 try:
     response = requests.get(" https://api.coindesk.com/v1/bpi/currentprice.json").json()
-    amount = float(response["bpi"]["USD"]["rate"])
+    amount = float(response["bpi"]["USD"]["rate"].remove(","))
     print(f"${amount:,.4f}")
 except requests.RequestException:
     pass
