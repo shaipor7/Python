@@ -17,6 +17,8 @@ def main():
                     print("EEE")
                     if i == 3:
                         print(f"{x} + {y} = {x+y}")
+            except ValueError:
+                print("EEE")
 
     print("Score: ", score)
 
@@ -25,10 +27,10 @@ def get_level():
         try:
             level = int(input("Level: "))
             if level in [1,2,3]:
-                generate_integer(level)
+                break
         except:
             pass
-
+    return level
 
 def generate_integer(level):
     return random.randint(1,10*level)
