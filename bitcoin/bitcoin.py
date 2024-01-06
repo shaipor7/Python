@@ -1,13 +1,11 @@
 import sys
 import requests
 import json
+if len(sys.argv) != 2:
+    sys.exit("Missing command-line argument")
 
 try:
-    try:
-        number = sys.argv[1]
-    except:
-        sys.exit("Missing command-line argument")
-    number = float(number)
+    number = float(sys.argv[1])
 except:
     sys.exit("Command-line argument is not a number")
 
