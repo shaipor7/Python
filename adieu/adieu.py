@@ -9,5 +9,7 @@ while True:
         string = input("Name: ")
         list.append(string)
     except EOFError:
-        print(p.join(list))
+        print()
         break
+
+print(p.join(list))
