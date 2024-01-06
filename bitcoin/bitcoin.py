@@ -3,13 +3,17 @@ import requests
 import json
 
 try:
-    number = float(sys.argv[1])
+    try:
+        number = sys.argv[1]
+    except:
+        sys.exit("Missing command-line argument")
+    number = float(number)
 except:
-    sys.exit("Missing command-line argument")
+    sys.exit("Command-line argument is not a number")
 
 try:
     response = requests.get(" https://api.coindesk.com/v1/bpi/currentprice.json").json()
-    amount = float(response["bpi"]["USD"]["rate"].replace(",",""))
+    amount = float(response["bpi"]["USD"]["rate"].replace(",","")) * number
     print(f"${amount:,.4f}")
 except requests.RequestException:
     pass
