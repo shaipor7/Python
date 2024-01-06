@@ -12,4 +12,4 @@ while True:
         print()
         break
 
-print(p.join(list))
+print("Adieu, adieu, to " + p.join(list))
