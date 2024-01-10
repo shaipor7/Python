@@ -17,7 +17,7 @@ try:
                         count +=1
             print(count)
         else:
-            print("Not a Python file")
+            sys.exit("Not a Python file")
 except FileNotFoundError:
-    sys.exit("File does not exist")
+    print("File does not exist")
 
