@@ -12,7 +12,7 @@ try:
         if sys.argv[1].endswith(".py"):
             with open(sys.argv[1]) as file:
                 for line in file:
-                    if line.startswith("#") or line.lstrip().startswith(" "):
+                    if line.startswith("#") or line.lstrip().rstrip().startswith(" "):
                         pass
                     else:
                         count +=1
