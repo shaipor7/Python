@@ -12,7 +12,8 @@ try:
         if sys.argv[1].endswith(".py"):
             with open(sys.argv[1]) as file:
                 for line in file:
-                    print(line)
+                    print(line.lstrip())
+                    print("1")
                     if line.startswith("#") or line.lstrip().startswith(""):
                         pass
                     else:
