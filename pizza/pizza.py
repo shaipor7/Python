@@ -13,7 +13,6 @@ try:
                 reader = csv.reader(file)
                 for row in reader:
                     list.append(row)
-            print(list)
             print(tabulate(list[1:], list[0], tablefmt="grid"))
         else:
             sys.exit("Not a CSV file")
