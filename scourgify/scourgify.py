@@ -18,8 +18,9 @@ try:
                 house = list["house"]
                 with open(sys.argv[2], "a") as file:
                     writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
-                    writer.writerow({"first": first, "last": last, "house":house})
 
+                    writer.writerow({"first": first, "last": last, "house":house})
+            writer.writeheader()
             #     list["first"] = first
             #     list["last"] = last
             # for list in lists:
