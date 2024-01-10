@@ -12,13 +12,11 @@ try:
         if sys.argv[1].endswith(".py"):
             with open(sys.argv[1]) as file:
                 for line in file:
-                    print(line.lstrip().rstrip())
-                    print("1")
-                    if line.startswith("#") or line.lstrip().startswith(""):
+                    if line.startswith("#") or line.lstrip().startswith(" "):
                         pass
                     else:
                         count +=1
-                        print(count)
+            print(count)
         else:
             print("Not a Python file")
 except FileNotFoundError:
