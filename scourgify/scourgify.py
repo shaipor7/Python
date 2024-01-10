@@ -1,6 +1,6 @@
 import sys
 import csv
-list = []
+lists = []
 final_list = []
 try:
     if len(sys.argv) > 2:
@@ -12,14 +12,14 @@ try:
             with open(sys.argv[1]) as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    list.append(row)
-                # for i in list:
-                first, last = list[0]["name"].split(", ")
-                list[0]["first"] = first
-                list[0]["last"] = last
-            print(list[0])
-            for i in list:
-                final_list[i] = {"first":list["first"], "last":list["last"], "house":["house"]}
+                    lists.append(row)
+            for list in lists:
+                first, last = list["name"].split(", ")
+                list["first"] = first
+                list["last"] = last
+            for list in lists:
+                final_list.append({"first":list["first"], "last":list["last"], "house":list["house"]})
+            print(final_list)
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
