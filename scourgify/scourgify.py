@@ -14,7 +14,7 @@ try:
                 for row in reader:
                     lists.append(row)
             for list in lists:
-                first, last = list["name"].split(", ")
+                last, first = list["name"].split(", ")
                 house = list["house"]
                 list["first"] = first
                 list["last"] = last
