@@ -1,5 +1,6 @@
 import sys
-count = 0
+import csv
+head = []
 try:
     if len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
@@ -8,13 +9,10 @@ try:
     else:
         if sys.argv[1].endswith(".csv"):
             with open(sys.argv[1]) as file:
-                for line in file:
-                    line = line.lstrip().rstrip()
-                    if line.startswith("#") or len(line) == 0:
-                        pass
-                    else:
-                        count +=1
-            print(count)
+                reader = csv.reader(file)
+                for topic in reader[0]:
+                    head.append(topic)
+            print(head)
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
