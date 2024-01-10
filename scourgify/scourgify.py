@@ -20,6 +20,10 @@ try:
             for list in lists:
                 final_list.append({"first":list["first"], "last":list["last"], "house":list["house"]})
             print(final_list)
+
+            with open(sys.argv[2], "a") as file:
+                writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+                writer.writerow({"name": name, "home": home})
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
