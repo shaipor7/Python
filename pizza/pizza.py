@@ -1,5 +1,6 @@
 import sys
 import csv
+from tabulate import tabulate
 list = []
 try:
     if len(sys.argv) > 2:
@@ -9,10 +10,11 @@ try:
     else:
         if sys.argv[1].endswith(".csv"):
             with open(sys.argv[1]) as file:
-                reader = csv.DictReader(file)
+                reader = csv.reader(file)
                 for row in reader:
                     list.append(row)
             print(list)
+            print(tabulate(list[1:], list[0], tablefmt="grid"))
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
