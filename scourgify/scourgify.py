@@ -12,10 +12,13 @@ try:
                 reader = csv.DictReader(file)
                 for row in reader:
                     list.append(row)
-                for i in list:
-                    first, last = list[0]["name"].split(", ")
-                    print(first)
-                    print(last)
+                # for i in list:
+                first, last = list[0]["name"].split(", ")
+                list[0]["first"] = first
+                list[0]["last"] = last
+                
+                print(first)
+                print(last)
             # print(list[0]["name"])
         else:
             sys.exit("Not a CSV file")
