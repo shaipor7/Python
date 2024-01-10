@@ -6,7 +6,7 @@ try:
     elif len(sys.argv) < 2:
          sys.exit("Too few command-line arguments")
     else:
-        if sys.argv[1].endswith(".py"):
+        if sys.argv[1].endswith(".csv"):
             with open(sys.argv[1]) as file:
                 for line in file:
                     line = line.lstrip().rstrip()
@@ -16,7 +16,6 @@ try:
                         count +=1
             print(count)
         else:
-            sys.exit("Not a Python file")
+            sys.exit("Not a CSV file")
 except FileNotFoundError:
     print("File does not exist")
-
