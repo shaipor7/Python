@@ -1,7 +1,7 @@
 import sys
 import csv
 list = []
-fianl_list = []
+final_list = []
 try:
     if len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
@@ -19,7 +19,7 @@ try:
                 list[0]["last"] = last
             print(list[0])
             for i in list:
-                
+                final_list[i] = {"first":list["first"], "last":list["last"], "house":["house"]}
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
