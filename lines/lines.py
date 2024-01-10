@@ -3,10 +3,8 @@ data = []
 count = 0
 try:
     if len(sys.argv) > 2:
-        # print("Too many command-line arguments")
         sys.exit("Too many command-line arguments")
     elif len(sys.argv) < 2:
-        #  print("Too few command-line arguments")
          sys.exit("Too few command-line arguments")
     else:
         if sys.argv[1].endswith(".py"):
@@ -21,5 +19,5 @@ try:
         else:
             print("Not a Python file")
 except FileNotFoundError:
-    print("File does not exist")
+    sys.exit("File does not exist")
 
