@@ -16,20 +16,14 @@ try:
             for list in lists:
                 first, last = list["name"].split(", ")
                 house = list["house"]
-                with open(sys.argv[2], "a") as file:
-                    writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+                list["first"] = first
+                list["last"] = last
 
-                    writer.writerow({"first": first, "last": last, "house":house})
-            writer.writeheader()
-            #     list["first"] = first
-            #     list["last"] = last
-            # for list in lists:
-            #     final_list.append({"first":list["first"], "last":list["last"], "house":list["house"]})
-            # print(final_list)
-
-            # with open(sys.argv[2], "a") as file:
-            #     writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
-            #     writer.writerow({"name": name, "home": home})
+            with open(sys.argv[2], "a") as file:
+                writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+                writer.writeheader()
+                for list in lists:
+                    writer.writerow({"first": list["first"], "last": list["last"], "house":list["house"]})
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
