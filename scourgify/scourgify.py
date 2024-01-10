@@ -19,9 +19,9 @@ try:
                 list["first"] = first
                 list["last"] = last
 
-            with open(sys.argv[2], "a") as file:
+            with open(sys.argv[2], "w") as file:
                 writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
-                # writer.writeheader()
+                writer.writeheader()
                 for list in lists:
                     writer.writerow({"first": list["first"], "last": list["last"], "house":list["house"]})
         else:
