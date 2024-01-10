@@ -18,6 +18,7 @@ try:
                 house = list["house"]
                 with open(sys.argv[2], "a") as file:
                     writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
+                    writer.writeheader()
                     writer.writerow({"first": first, "last": last, "house":house})
 
             #     list["first"] = first
@@ -32,4 +33,4 @@ try:
         else:
             sys.exit("Not a CSV file")
 except FileNotFoundError:
-    print("File does not exist")
+    sys.exit("Could not read ",sys.argv[1])
