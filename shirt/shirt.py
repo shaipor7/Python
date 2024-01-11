@@ -13,7 +13,7 @@ try:
             shirt = Image.open("shirt.png")
             photo = Image.open(sys.argv[1])
             size = shirt.size
-            ImageOps.fit(photo, size)
+            photo = ImageOps.fit(photo, size)
             photo.paste(shirt, shirt)
             photo.save(sys.argv[2])
         else:
