@@ -7,8 +7,11 @@ try:
     elif len(sys.argv) < 3:
          sys.exit("Too few command-line arguments")
     else:
-        name , last = os.path.splitext(sys.argv[1])
-        if last in [".jpg",".png",".jpeg"]:
+        _ , last_1 = os.path.splitext(sys.argv[1])
+        _ , last_2 = os.path.splitext(sys.argv[2])
+        if last_1 != last_2:
+            sys.exit("Input and output have different extensions")
+        elif last_1 and last_2 in [".jpg",".png",".jpeg"]:
             shirt = Image.open("shirt.png")
             photo = Image.open(sys.argv[1])
             size = shirt.size
