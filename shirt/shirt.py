@@ -9,8 +9,10 @@ try:
     else:
         name , last = os.path.splitext(sys.argv[1])
         if last in [".jpg",".png",".jpeg"]:
-            shirt = Image.open(sys.argv[1])
+            shirt = Image.open("shirt.png")
+            photo = Image.open(sys.argv[1])
             size = shirt.size
+            photo.paste(shirt, shirt)
             PIL.ImageOps.fit(shirt, size)
         else:
             sys.exit("Invalid input")
