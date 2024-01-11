@@ -12,8 +12,8 @@ try:
             shirt = Image.open("shirt.png")
             photo = Image.open(sys.argv[1])
             size = shirt.size
+            PIL.ImageOps.fit(photo, size)
             photo.paste(shirt, shirt)
-            PIL.ImageOps.fit(shirt, size)
         else:
             sys.exit("Invalid input")
 except FileNotFoundError:
