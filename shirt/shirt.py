@@ -14,6 +14,7 @@ try:
             size = shirt.size
             PIL.ImageOps.fit(photo, size)
             photo.paste(shirt, shirt)
+            Image.save(sys.argv[2])
         else:
             sys.exit("Invalid input")
 except FileNotFoundError:
