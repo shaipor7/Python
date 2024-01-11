@@ -1,4 +1,5 @@
 import sys
+import os
 count = 0
 try:
     if len(sys.argv) > 3:
@@ -6,15 +7,10 @@ try:
     elif len(sys.argv) < 3:
          sys.exit("Too few command-line arguments")
     else:
-        if sys.argv[1].endswith(".py"):
-            with open(sys.argv[1]) as file:
-                for line in file:
-                    line = line.lstrip().rstrip()
-                    if line.startswith("#") or len(line) == 0:
-                        pass
-                    else:
-                        count +=1
-            print(count)
+        name , last = os.path.splitext(sys.argv[1])
+        if last in [".jpg",".png",".jpeg"]:
+            shirt = Image.open(sys.argv[1])
+            size = shirt.size
         else:
             sys.exit("Invalid input")
 except FileNotFoundError:
