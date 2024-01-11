@@ -1,7 +1,6 @@
 import sys
 import os
-from PIL import Image
-import PIL
+from PIL import Image, ImageOps
 count = 0
 try:
     if len(sys.argv) > 3:
@@ -14,9 +13,9 @@ try:
             shirt = Image.open("shirt.png")
             photo = Image.open(sys.argv[1])
             size = shirt.size
-            PIL.ImageOps.fit(photo, size)
+            ImageOps.fit(photo, size)
             photo.paste(shirt, shirt)
-            Image.save(sys.argv[2])
+            Image.save("sys.argv[2]")
         else:
             sys.exit("Invalid input")
 except FileNotFoundError:
