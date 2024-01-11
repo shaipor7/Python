@@ -11,6 +11,7 @@ try:
         if last in [".jpg",".png",".jpeg"]:
             shirt = Image.open(sys.argv[1])
             size = shirt.size
+            PIL.ImageOps.fit(shirt, size)
         else:
             sys.exit("Invalid input")
 except FileNotFoundError:
