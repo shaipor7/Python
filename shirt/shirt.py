@@ -1,5 +1,7 @@
 import sys
 import os
+from PIL import Image
+import PIL
 count = 0
 try:
     if len(sys.argv) > 3:
