@@ -11,8 +11,6 @@ def convert(s):
         raise ValueError("Invalid time format")
 
     def to_24_hour(hour, minute, meridiem):
-        if minute = "00":
-            minute = 0
         hour, minute = int(hour), int(minute)
         if meridiem == 'PM' and hour != 12:
             hour += 12
