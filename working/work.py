@@ -7,9 +7,11 @@ def main():
 
 
 def convert(s):
-    if matches := re.search(r"^([0-9].):?([0-9].) (AM|PM) to ([0-9].):?([0-9].) (AM|PM)$",s):
-        if 0 <= int(matches.group(1)) and int(matches.group(2)) <= 12:
-            
+    match = re.search(r"^(1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM) to (1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM)$")
+    if not match:
+        raise ValueError("Invalid time format")
+    else
+
 
 
 ...
