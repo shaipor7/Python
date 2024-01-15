@@ -6,12 +6,14 @@ def main():
     print(convert(input("Hours: ")))
 
 def convert(s):
-    matches = re.search(r"^(1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM) to (1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM)$")
+    matches = re.search(r"^(1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM) to (1[0-2]|[1-9])(:([0-5][0-9]))? (AM|PM)$",s)
     if not matches:
         raise ValueError("Invalid time format")
 
     def to_24_hour(hour, minute, meridiem):
-        hour, minute = int(hour), int(minute or 0)
+        if minute = "00":
+            minute = 0
+        hour, minute = int(hour), int(minute)
         if meridiem == 'PM' and hour != 12:
             hour += 12
         elif meridiem == 'AM' and hour == 12:
@@ -27,5 +29,6 @@ def convert(s):
     start_24 = to_24_hour(start_hour, start_minute, start_meridiem)
     end_24 = to_24_hour(end_hour, end_minute, end_meridiem)
 
+    return f"{start_24} to {end_24}"
 if __name__ == "__main__":
     main()
