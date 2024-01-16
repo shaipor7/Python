@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    matches = re.search(".+/W(um)/W.+",s)
+    matches = re.search(".*/W*(um)/W*.*",s)
     return len(matches.group())
 
 
