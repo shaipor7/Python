@@ -7,12 +7,7 @@ def main():
 
 
 def count(s):
-    matches = re.search(".*/W*(um)/W*.*",s)
-    return len(matches.group())
-
-
-...
-
+    return len(re.findall(r'\bum\b', s, re.IGNORECASE))
 
 if __name__ == "__main__":
     main()
