@@ -4,7 +4,7 @@ class Jar:
         self.size = 0
 
     def __str__(self):
-        return '🍪'*self.capacity
+        return '🍪'*self.size
 
     def deposit(self, n):
         self.size += n
@@ -35,8 +35,9 @@ class Jar:
 
 def main():
     jar = Jar()
-    jar.withdraw(11)
-    print(a)
+    jar.deposit(3)
+    # jar.withdraw(11)
+    print(jar)
     # Input =
 
 if __name__ == "__main__":
