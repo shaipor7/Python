@@ -4,7 +4,7 @@ import sys
 class Convert():
     def __init__(self):
         self.input = input("Date of Birth: ")
-        if not match := re.search("^()$",self.input):
+        if not match := re.search("^([0-9])-()-()$",self.input):
             sys.exit("Invalid date")
 
 
