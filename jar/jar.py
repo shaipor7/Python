@@ -31,10 +31,11 @@ class Jar:
     def size(self):
         return self._size
 
+    @size.setter
     def size(self, cookie):
-        if self.size < self.capacity:
+        if cookie > self.capacity or cookie < 0 :
             raise ValueError
-
+        self._size = cookie
 
 
 def main():
