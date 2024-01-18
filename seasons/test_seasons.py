@@ -4,4 +4,4 @@ import pytest
 def test_seasons():
     with pytest.raises(ValueError):
         convert("1999/12/13")
-    # assert convert(")
+    assert convert("1999-12-")
