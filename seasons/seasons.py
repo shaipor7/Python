@@ -10,7 +10,8 @@ class Convert():
             sel.now
         except:
             sys.exit("Invalid date")
-    def __sub__()
+    def __sub__(self, other):
+        minutes = self.input
         # if match := re.search("^(\d{4})-(1[0-2]|0[1-9])-(3[0-1]|[0-2][1-9])$",self.input):
         #     print(match.group(1))
         #     print(match.group(2))
