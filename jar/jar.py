@@ -23,7 +23,7 @@ class Jar:
 
     @capacity.setter
     def capacity(self, cap_cookie):
-        if type(cap_cookie) != int or cap_cookie < 0:
+        if cap_cookie < 0:
             raise ValueError
         self._capacity = cap_cookie
 
