@@ -34,7 +34,8 @@ class Jar:
 
 
 def main():
-    a= Jar(0)
+    jar = Jar()
+    jar.withdraw(11)
     print(a)
     # Input =
 
