@@ -5,12 +5,12 @@ import inflect
 
 def convert():
     p = inflect.engine()
-    # try:
-    input = date.fromisoformat(input("Date of Birth: "))
-    now = date.today()
-    day = (abs(input - now)).days
-    # except:
-    #     sys.exit("Invalid date")
+    try:
+        Input = date.fromisoformat(input("Date of Birth: "))
+        now = date.today()
+        day = (abs(Input - now)).days
+    except:
+        sys.exit("Invalid date")
     return p.number_to_words(day*24*60, andword="")
     # def __sub__(self):
     #     minutes = self.input -
@@ -23,8 +23,7 @@ def convert():
 
 
 def main():
-    convert()
-    # print(a)
+    print(convert())
 
 if __name__ == "__main__":
     main()
