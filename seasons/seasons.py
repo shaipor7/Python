@@ -22,7 +22,8 @@ def convert():
 
 
 def main():
-    print(convert())
+    a = convert()
+    print(a)
 
 if __name__ == "__main__":
     main()
