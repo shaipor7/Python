@@ -1,5 +1,5 @@
 from jar import Jar
-
+import pytest
 
 def test_init():
     jar = Jar()
@@ -15,7 +15,12 @@ def test_str():
 
 
 def test_deposit():
-    ...
+    jar = Jar()
+    jar.deposit(1)
+    assert jar.size == 1
+    jar.deposit(13)
+    with pytest.raises(ValueError):
+        assert jar.size
 
 
 def test_withdraw():
