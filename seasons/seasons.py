@@ -5,7 +5,8 @@ import re
 class Convert():
     def __init__(self):
         self.input = input("Date of Birth: ")
-        print(date.fromisoformat(self.input))
+
+        if date.fromisoformat(self.input)
         # if match := re.search("^(\d{4})-(1[0-2]|0[1-9])-(3[0-1]|[0-2][1-9])$",self.input):
         #     print(match.group(1))
         #     print(match.group(2))
