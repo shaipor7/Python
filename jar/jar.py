@@ -20,16 +20,20 @@ class Jar:
 
     @property
     def capacity(self):
-        return self.capacity
+        return self._capacity
+
+    @
 
     @property
     def size(self):
-        return self.size
+        return self._size
+
+
 
 def main():
     a= Jar(-12)
     print(a)
     # Input =
 
-if __name__ == "__main":
+if __name__ == "__main__":
     main()
