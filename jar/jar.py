@@ -27,7 +27,7 @@ class Jar:
         return self.size
 
 def main():
-    a= Jar(12)
+    a= Jar(-12)
     print(a)
     # Input =
 
