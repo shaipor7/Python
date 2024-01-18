@@ -5,7 +5,7 @@ class Jar:
 
 
     def __str__(self):
-        return "'🍪'*self.capacity"
+        return '🍪'*self.capacity
 
     def deposit(self, n):
         self.size += n
@@ -23,7 +23,7 @@ class Jar:
 
     @capacity.setter
     def capacity(self, cap_cookie):
-        if cap_cookie < 0:
+        if type(cap_cookie) != int or cap_cookie < 0:
             raise ValueError
         self._capacity = cap_cookie
 
@@ -39,7 +39,7 @@ class Jar:
 
 
 def main():
-    a= Jar(-12)
+    a= Jar()
     print(a)
     # Input =
 
