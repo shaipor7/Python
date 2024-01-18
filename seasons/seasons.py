@@ -8,7 +8,8 @@ class Convert():
         try:
             self.input = date.fromisoformat(input("Date of Birth: "))
             self.now = date.today()
-            print((self.input - self.now))
+            day = (abs(self.input - self.now)).days
+            print(day*24*60)
         except:
             sys.exit("Invalid date")
     # def __sub__(self):
