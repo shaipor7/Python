@@ -3,10 +3,10 @@ import sys
 import re
 import inflect
 
-def convert():
+def convert(time):
     p = inflect.engine()
     try:
-        Input = date.fromisoformat(input("Date of Birth: "))
+        Input = date.fromisoformat(time)
         now = date.today()
         day = (abs(Input - now)).days
     except:
@@ -23,7 +23,7 @@ def convert():
 
 
 def main():
-    print(convert())
+    print(convert(input("Date of Birth: ")))
 
 if __name__ == "__main__":
     main()
