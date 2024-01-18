@@ -5,7 +5,7 @@ class Jar:
 
 
     def __str__(self):
-        return '🍪'*self.capacity
+        return '🍪'*(self.capacity+1)
 
     def deposit(self, n):
         self.size += n
