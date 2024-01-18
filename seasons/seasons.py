@@ -4,9 +4,13 @@ import re
 
 class Convert():
     def __init__(self):
-        self.input = input("Date of Birth: ")
 
-        if date.fromisoformat(self.input)
+        try:
+            self.input = date.fromisoformat(input("Date of Birth: "))
+            sel.now
+        except:
+            sys.exit("Invalid date")
+    def __sub__()
         # if match := re.search("^(\d{4})-(1[0-2]|0[1-9])-(3[0-1]|[0-2][1-9])$",self.input):
         #     print(match.group(1))
         #     print(match.group(2))
