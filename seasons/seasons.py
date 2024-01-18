@@ -11,7 +11,7 @@ def convert(time):
         day = (abs(Input - now)).days
     except:
         sys.exit("Invalid date")
-    return (p.number_to_words(day*24*60, andword="")).capitalize()
+    return (p.number_to_words(day*24*60, andword="")).capitalize() + " minutes"
     # def __sub__(self):
     #     minutes = self.input -
         # if match := re.search("^(\d{4})-(1[0-2]|0[1-9])-(3[0-1]|[0-2][1-9])$",self.input):
