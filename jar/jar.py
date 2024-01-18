@@ -22,7 +22,9 @@ class Jar:
     def capacity(self):
         return self._capacity
 
-    @
+    @capacity.setter
+    def capacity(self, cookie):
+        
 
     @property
     def size(self):
