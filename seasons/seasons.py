@@ -6,7 +6,6 @@ import inflect
 def convert():
     p = inflect.engine()
     # try:
-    o= input("")
     input = date.fromisoformat(input("Date of Birth: "))
     now = date.today()
     day = (abs(input - now)).days
@@ -24,8 +23,8 @@ def convert():
 
 
 def main():
-    a = convert()
-    print(a)
+    convert()
+    # print(a)
 
 if __name__ == "__main__":
     main()
