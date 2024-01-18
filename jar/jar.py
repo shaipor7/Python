@@ -6,7 +6,7 @@ class Jar:
             raise ValueError
 
     def __str__(self):
-        return 🍪*capacity
+        return '🍪'*capacity
 
     def deposit(self, n):
         self.size += n
@@ -27,7 +27,9 @@ class Jar:
         return self.size
 
 def main():
-    Input =
+    a= Jar()
+    print(a)
+    # Input =
 
 if __name__ == "__main":
     main()
