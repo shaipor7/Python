@@ -4,10 +4,8 @@ class PDF(FPDF):
     def header(self):
         # Setting font: helvetica bold 15
         self.set_font("helvetica", "B", 40)
-        # Moving cursor to the right:
-        self.cell(80)
         # Printing title:
-        self.cell(30, 10, "CS50 Shirtificate", align="C")
+        self.cell(30, 10, "CS50 Shirtificate", center= True, align="C")
         # Performing a line break:
         self.ln(40)
         # Rendering logo:
