@@ -13,7 +13,7 @@ from fpdf import FPDF
 #         # Performing a line break:
 #         self.ln(20)
 # pdf = PDF()
-pdf = FPDF(orientation="P", unit="mm", format="A4")
+pdf = FPDF(orientation="P", format="A4")
 pdf.add_page()
 pdf.set_font("helvetica", "B", 16)
 pdf.cell(80)
