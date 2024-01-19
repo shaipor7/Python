@@ -13,7 +13,7 @@ class PDF(FPDF):
         # Performing a line break:
         self.ln(40)
         # Rendering logo:
-        self.image("shirtificate.png", x=enums.Align.C , w=pdf.epw, h=pdf.epw)
+        self.image("shirtificate.png", x=enums.Align.C , w=self.epw, h=self.epw)
         #Printing texts on shirt
         self.set_text_color(r=255, g=255, b=255)
         self.cell(30, -250, self.name , center= True, align="C")
