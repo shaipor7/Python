@@ -18,10 +18,14 @@ def test_deposit():
     jar = Jar()
     jar.deposit(1)
     assert jar.size == 1
-    jar.deposit(13)
     with pytest.raises(ValueError):
-        assert jar.size
+        assert jar.deposit(13)
 
 
 def test_withdraw():
-    ...
+    jar = Jar()
+    jar.deposit(10)
+    jar.withdraw(1)
+    assert jar.size == 9
+    with pytest.raises(ValueError):
+        assert jar.withdraw(13)
