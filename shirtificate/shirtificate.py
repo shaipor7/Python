@@ -1,8 +1,9 @@
 from fpdf import FPDF,enums
 
 class PDF(FPDF):
-    def __init__(self):
-        self.name = str(input("Name: "))
+    def __init__(self, name):
+        super().__init__()
+        self.name = name
 
     def header(self):
         # Setting font: helvetica bold 15
@@ -17,5 +18,5 @@ class PDF(FPDF):
         self.set_text_color(r=255, g=255, b=255)
         self.cell(30, -250, self.name , center= True, align="C")
 
-pdf = PDF()
+pdf = PDF(input("Name: "))
 pdf.output("tuto1.pdf")
