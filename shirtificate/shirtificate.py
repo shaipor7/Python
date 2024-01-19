@@ -11,9 +11,9 @@ class PDF(FPDF):
         self.cell(30, 10, "CS50 Shirtificate", align="C")
         # Performing a line break:
         self.ln(20)
-        
+        # self.cell(0)
         # Rendering logo:
-        self.image("shirtificate.png", 10, 8, 33)
+        self.image("shirtificate.png", x=10, y=30, w=pdf.epw, h=pdf.epw)
 pdf = PDF()
 # pdf = FPDF(orientation="P", format="A4")
 # pdf.add_page()
