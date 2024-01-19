@@ -13,7 +13,7 @@ class PDF(FPDF):
         self.ln(20)
         # self.cell(0)
         # Rendering logo:
-        self.image("shirtificate.png", center = True, w=pdf.epw, h=pdf.epw)
+        self.image("shirtificate.png", x=Align.C, y=30, w=pdf.epw, h=pdf.epw)
 pdf = PDF()
 # pdf = FPDF(orientation="P", format="A4")
 # pdf.add_page()
