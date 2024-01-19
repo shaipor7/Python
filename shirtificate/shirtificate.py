@@ -19,4 +19,4 @@ class PDF(FPDF):
         self.cell(30, -250, self.name , center= True, align="C")
 
 pdf = PDF(input("Name: "))
-pdf.output("tuto1.pdf")
+pdf.output("shirtificate.pdf")
