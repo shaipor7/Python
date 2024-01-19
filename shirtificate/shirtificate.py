@@ -2,7 +2,6 @@ from fpdf import FPDF,enums
 
 class PDF(FPDF):
     def header(self):
-
         # Setting font: helvetica bold 15
         self.set_font("helvetica", "B", 40)
         # Moving cursor to the right:
@@ -10,15 +9,11 @@ class PDF(FPDF):
         # Printing title:
         self.cell(30, 10, "CS50 Shirtificate", align="C")
         # Performing a line break:
-        self.ln(20)
-        # self.cell(0)
+        self.ln(40)
         # Rendering logo:
-        self.image("shirtificate.png", x=enums.Align.C, w=pdf.epw, h=pdf.epw)
+        self.image("shirtificate.png", x=enums.Align.C , w=pdf.epw, h=pdf.epw)
+        # Moving cursor to the right:
+        self.cell(80)
+        self.cell(30, -250, "CS50 Shirtificate", align="C")
 pdf = PDF()
-# pdf = FPDF(orientation="P", format="A4")
-# pdf.add_page()
-# pdf.set_font("helvetica", "B", 16)
-# # pdf.cell(80)
-# pdf.cell(80, 10, "CS50 Shirtificate", align="C")
-# pdf.image("shirtificate.png",h=pdf.eph, w=pdf.epw/2)
 pdf.output("tuto1.pdf")
