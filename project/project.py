@@ -13,8 +13,8 @@ def function_2():
     ...
 
 
-def reinvestment(money_amout, interest, year, ):
-    year
+def reinvestment(money_amout, interest, year, compounded):
+    return money_amout * (1 + interest / compounded) ^ (year * compounded)
 
 
 if __name__ == "__main__":
