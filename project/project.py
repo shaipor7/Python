@@ -11,28 +11,28 @@ class Tax():
         self.tax_base_percentage = input("what is your personal tax ? (percentage): ") # 5
         self.reinvestment_interest_percentage = input("What is your expected interest from investment? (percentage): ") # 3
 
-        self.return_money_from_tax = percentage(protect_amout, tax_base_percentage)
-        self.return_money_from_insurance = percentage(protect_amout, insurance_interest_percentage)
+        self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
+        self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
 
     def accumulate(self):
-        total_ivestment_money = 0
+        total_investment_money = 0
         tax_money_back_count = 0
         for ages in range(self.age, self.coverage_year):
             tax_money_back_count =+ 1
             if tax_money_back_count <= self.payment_year:
-                total_ivestment_money += reinvestment(self.return_money_from_tax,
+                total_investment_money += self.reinvestment(self.return_money_from_tax,
                                                     self.reinvestment_interest_percentage,
                                                     self.coverage_year - ages, 1)
-            total_ivestment_money += reinvestment(self.return_money_from_insurance,
+            total_investment_money += self.reinvestment(self.return_money_from_insurance,
                                                 self.reinvestment_interest_percentage,
                                                 self.coverage_year - ages, 1)
-        return total_ivestment_money
+        return total_investment_money
 
 
-    def reinvestment(money_amout, interest, year, compounded):
+    def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / compounded) ^ (year * compounded)
 
 
