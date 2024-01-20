@@ -6,15 +6,15 @@ def main():
 
 
 def function_1():
-    
+
 
 
 def function_2():
     ...
 
 
-def function_n():
-    ...
+def reinvestment(money_amout, interest, year, ):
+    year
 
 
 if __name__ == "__main__":
