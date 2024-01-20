@@ -24,9 +24,12 @@ def percentage(money_amount , percentage):
 def accumulate(payment_year):
     total_ivestment_money = 0
     tax_money_back_count = 0
-    for i in range(age, coverage_year):
-        
-
+    for ages in range(age, coverage_year):
+        tax_money_back_count =+ 1
+        if tax_money_back_count <= payment_year:
+            total_ivestment_money += reinvestment(return_money_from_tax,reinvestment_interest_percentage,
+                                                  coverage_year - ages,
+                                           1)
 
 
 
