@@ -18,8 +18,10 @@ class Tax():
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
 
-    def __str__(self):
-        return total_investment_money
+        self.total = self.accumulate()
+
+    def __str__():
+        return self.total
 
     def percentage(self, money_amount , percentage):
         return int(money_amount) * float(percentage) / 100
@@ -45,7 +47,7 @@ class Tax():
 
 def main():
     tax = Tax()
-    print(tax.total_investment_money)
+    print(tax)
 
 if __name__ == "__main__":
     main()
