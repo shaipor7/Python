@@ -21,9 +21,12 @@ def main():
 def percentage(money_amount , percentage):
     return money_amount * percentage / 100
 
-def accumulate():
+def accumulate(payment_year):
+    total_ivestment_money = 0
+    tax_money_back_count = 0
     for i in range(age, coverage_year):
         
+
 
 
 
