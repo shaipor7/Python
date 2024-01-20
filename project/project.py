@@ -1,8 +1,10 @@
 def main():
     print("First part: Saving-Insurance information")
-    coverage_year = input("Coverage Term: ")
-    payment_year = input("Payment Term: ")
-    interest_percentage = input("Cash Benefit per year")
+    coverage_year = input("Coverage Term (years): ") # 77
+    payment_year = input("Payment Term (years): ") # 7
+    payment_amout = input("Payment amount at assured 100k ฿: ") # 98300
+    
+    interest_percentage = input("Cash Benefit per year (percentage): ")
 
 
 def function_1():
