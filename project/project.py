@@ -13,7 +13,10 @@ def main():
     return_money_from_tax = percentage(protect_amout, tax_base_percentage)
     return_money_from_insurance = percentage(protect_amout, insurance_interest_percentage)
 
-    money_from_reinvestment = reinvestment(return_money_from_tax+return_money_from_insurance, reinvestment_interest_percentage, )
+    money_from_reinvestment = reinvestment(return_money_from_tax + return_money_from_insurance,
+                                           reinvestment_interest_percentage, coverage_year - age,
+                                           1)
+    
 
 def percentage(money_amount , percentage):
     return money_amount * percentage / 100
