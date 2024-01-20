@@ -1,5 +1,7 @@
 def main():
     print("First part: Saving-Insurance information")
+    coverage_year = input("Coverage Term: ")
+    payment_year = input("Payment Term: ")
     
 
 
