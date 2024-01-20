@@ -1,3 +1,7 @@
+class Tax():
+    def __init__(self):
+        
+
 def main():
     print("First part: Saving-Insurance Information")
     coverage_year = input("Coverage Term (years): ") # 77
