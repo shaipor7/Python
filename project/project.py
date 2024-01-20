@@ -16,13 +16,14 @@ def main():
     money_from_reinvestment = reinvestment(return_money_from_tax + return_money_from_insurance,
                                            reinvestment_interest_percentage, coverage_year - age,
                                            1)
-    
+
 
 def percentage(money_amount , percentage):
     return money_amount * percentage / 100
 
 def accumulate():
-    ...
+    for i in range(age:coverage_year):
+        
 
 
 def reinvestment(money_amout, interest, year, compounded):
