@@ -2,14 +2,14 @@ def main():
     print("First part: Saving-Insurance information")
     coverage_year = input("Coverage Term: ")
     payment_year = input("Payment Term: ")
-
+    interest_percentage = input("Cash Benefit per year")
 
 
 def function_1():
 
 
 
-def function_2():
+def accumulate():
     ...
 
 
