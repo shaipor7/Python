@@ -45,7 +45,7 @@ class Tax():
 
 def main():
     tax = Tax()
-    print(tax.accumulate)
+    print(tax.total_investment_money)
 
 if __name__ == "__main__":
     main()
