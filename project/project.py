@@ -3,17 +3,17 @@ class Tax():
         print("*****************************************")
         print("First part: Saving-Insurance Information")
         print("*****************************************")
-        self.coverage_year = input("Coverage Term (years): ") # 77
-        self.payment_year = input("Payment Term (years): ") # 7
-        self.payment_amout = input("Payment amount (Bath): ") # 98300
-        self.protect_amout = input("assured amount (Bath): ") # 100000
-        self.insurance_interest_percentage = input("Cash Benefit per year (percentage): ") # 10
+        self.coverage_year = int(input("Coverage Term (years): ")) # 77
+        self.payment_year = int(input("Payment Term (years): ")) # 7
+        self.payment_amout = int(input("Payment amount (Bath): ")) # 98300
+        self.protect_amout = int(input("assured amount (Bath): ")) # 100000
+        self.insurance_interest_percentage = int(input("Cash Benefit per year (percentage): ")) # 10
         print("*****************************************")
         print("Second part: Personal Information")
         print("*****************************************")
-        self.age = input("How old are you (years): ") # 24
-        self.tax_base_percentage = input("what is your personal tax ? (percentage): ") # 5
-        self.reinvestment_interest_percentage = input("What is your expected interest from investment? (percentage): ") # 3
+        self.age = int(input("How old are you (years): ")) # 24
+        self.tax_base_percentage = int(input("what is your personal tax ? (percentage): ")) # 5
+        self.reinvestment_interest_percentage = float(input("What is your expected interest from investment? (percentage): ")) # 3
 
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
@@ -24,7 +24,7 @@ class Tax():
         return self.total
 
     def percentage(self, money_amount , percentage):
-        return int(money_amount) * float(percentage) / 100
+        return money_amount * percentage / 100
 
     def accumulate(self):
         total_investment_money = 0
@@ -42,7 +42,7 @@ class Tax():
 
 
     def reinvestment(self, money_amout, interest, year, compounded):
-        return float(money_amout) * (1 + float(interest) / int(compounded)) ^ (int(year) * int(compounded))
+        return money_amout * (1 + interest / compounded) ^ (year * compounded)
 
 
 def main():
