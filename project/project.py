@@ -20,8 +20,8 @@ class Tax():
 
         self.total = self.accumulate()
 
-    def __str__():
-        return self.total
+    def __str__(self):
+        return str(self.total)
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
@@ -42,7 +42,7 @@ class Tax():
 
 
     def reinvestment(self, money_amout, interest, year, compounded):
-        return money_amout * (1 + interest / compounded) ^ (year * compounded)
+        return money_amout * (1 + interest / compounded) ** (year * compounded)
 
 
 def main():
