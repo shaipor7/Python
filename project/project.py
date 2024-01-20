@@ -22,8 +22,9 @@ def percentage(money_amount , percentage):
     return money_amount * percentage / 100
 
 def accumulate():
-    for i in range(age:coverage_year):
+    for i in range(age, coverage_year):
         
+
 
 
 def reinvestment(money_amout, interest, year, compounded):
