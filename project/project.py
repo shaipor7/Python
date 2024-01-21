@@ -11,8 +11,8 @@ class Tax():
         print("*****************************************")
         print("Second part: Personal Information")
         print("*****************************************")
-        self.tax_base_percentage = 25 #int(input("what is your personal tax ? (percentage): ")) # 5
-        self.reinvestment_interest_percentage = 1.5 #float(input("What is your expected interest from investment? (percentage): ")) # 3
+        self.tax_base_percentage = 20 #int(input("what is your personal tax ? (percentage): ")) # 5
+        self.reinvestment_interest_percentage = 0 #float(input("What is your expected interest from investment? (percentage): ")) # 3
 
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
