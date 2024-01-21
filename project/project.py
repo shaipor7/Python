@@ -37,6 +37,7 @@ class Tax():
             total_investment_money += self.reinvestment(self.return_money_from_insurance,
                                                 self.reinvestment_interest_percentage,
                                                 ages, 1)
+            
         return total_investment_money
     def income_invest_accumulate(self):
         ...
