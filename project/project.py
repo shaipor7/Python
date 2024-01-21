@@ -3,12 +3,12 @@ class Tax():
         # print("*****************************************")
         # print("First part: Saving-Insurance Information")
         # print("*****************************************")
-        self.coverage_year = 52 #int(input("Coverage Term (years): ")) # 77
-        self.payment_year =  7 #int(input("Payment Term (years): ")) # 7
+        self.coverage_year = 14 #int(input("Coverage Term (years): ")) # 77
+        self.payment_year =  9 #int(input("Payment Term (years): ")) # 7
         self.payment_amout = 100000#int(input("Payment amount (Bath): ")) # 98300
         self.protect_amout = 100000#int(input("assured amount (Bath): ")) # 100000
-        self.final_return_money = 700000 #int(input("Final return money (Bath): ")) #700000
-        self.insurance_interest_percentage = 10 #int(input("Cash Benefit per year (percentage): ")) # 10
+        self.final_return_money = 900000 #int(input("Final return money (Bath): ")) #700000
+        self.insurance_interest_percentage = 5 #int(input("Cash Benefit per year (percentage): ")) # 10
         # print("*****************************************")
         # print("Second part: Personal Information")
         # print("*****************************************")
