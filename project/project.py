@@ -17,7 +17,7 @@ class Tax():
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
 
-        self.total = self.income_tax_accumulate()
+        self.total = self.income_invest_accumulate()
 
     def __str__(self):
         return str(self.total)
@@ -39,9 +39,14 @@ class Tax():
                                                 i, 1)
             print(i)
         return total_investment_money
+    
     def income_invest_accumulate(self):
-        ...
-
+        total_investment_money = 0
+        for i in range(self.coverage_year - 1 , 0 , -1):
+            total_investment_money += self.reinvestment(self.return_money_from_insurance,
+                                                self.reinvestment_interest_percentage,
+                                                i, 1)
+        return total_investment_money
 
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
