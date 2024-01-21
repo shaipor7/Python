@@ -3,16 +3,16 @@ class Tax():
         # print("*****************************************")
         # print("First part: Saving-Insurance Information")
         # print("*****************************************")
-        self.coverage_year = 14 #int(input("Coverage Term (years): ")) # 77
-        self.payment_year =  9 #int(input("Payment Term (years): ")) # 7
+        self.coverage_year = 15 #int(input("Coverage Term (years): ")) # 77
+        self.payment_year =  5 #int(input("Payment Term (years): ")) # 7
         self.payment_amout = 100000#int(input("Payment amount (Bath): ")) # 98300
         self.protect_amout = 100000#int(input("assured amount (Bath): ")) # 100000
-        self.final_return_money = 900000 #int(input("Final return money (Bath): ")) #700000
-        self.insurance_interest_percentage = 5 #int(input("Cash Benefit per year (percentage): ")) # 10
+        self.final_return_money = 500000 #int(input("Final return money (Bath): ")) #700000
+        self.insurance_interest_percentage = 4 #int(input("Cash Benefit per year (percentage): ")) # 10
         # print("*****************************************")
         # print("Second part: Personal Information")
         # print("*****************************************")
-        self.tax_base_percentage = 25 #int(input("what is your personal tax ? (percentage): ")) # 5
+        self.tax_base_percentage = 5 #int(input("what is your personal tax ? (percentage): ")) # 5
         self.reinvestment_interest_percentage = 3 #float(input("What is your expected interest from investment? (percentage): ")) # 3
 
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
