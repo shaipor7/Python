@@ -27,7 +27,6 @@ class Tax():
 
     def income_tax_accumulate(self):
         total_investment_money = 0
-        tax_money_back_count = 0
         for year in range(self.coverage_year , self.coverage_year - self.payment_year , -1):
             total_investment_money += self.reinvestment(self.return_money_from_tax,
                                                 self.reinvestment_interest_percentage,
