@@ -1,7 +1,10 @@
 # ask user name
-# name = input("What's your name? ")
+Input = input("What's your name? ")
+country = "Thailand"
 
 # print hello, name 0f user to terminal
-print("hello, \"friend\"")
+print(f"hello, {Input} from {country}.")
+
+print("hello, " + Input + " from " + country + ".")
 
 # hello, por
