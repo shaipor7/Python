@@ -26,7 +26,7 @@ class Tax():
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
 
-    def accumulate(self):
+    def income_tax_accumulate(self):
         total_investment_money = 0
         tax_money_back_count = 0
         for ages in range(self.age, self.coverage_year):
@@ -39,7 +39,8 @@ class Tax():
                                                 self.reinvestment_interest_percentage,
                                                 self.coverage_year - ages, 1)
         return total_investment_money
-
+    def income_invest_accumulate(self):
+        
 
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
