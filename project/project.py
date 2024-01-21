@@ -28,24 +28,21 @@ class Tax():
     def income_tax_accumulate(self):
         total_investment_money = 0
         tax_money_back_count = 0
-        for i in range(self.coverage_year - 1 , 0 , -1):
+        for year in range(self.coverage_year - 1 , 0 , -1):
             tax_money_back_count += 1
             if tax_money_back_count <= self.payment_year:
                 total_investment_money += self.reinvestment(self.return_money_from_tax,
                                                     self.reinvestment_interest_percentage,
-                                                    i, 1)
-            total_investment_money += self.reinvestment(self.return_money_from_insurance,
-                                                self.reinvestment_interest_percentage,
-                                                i, 1)
+                                                    year, 1)
             print(i)
         return total_investment_money
-    
+
     def income_invest_accumulate(self):
         total_investment_money = 0
-        for i in range(self.coverage_year - 1 , 0 , -1):
+        for year in range(self.coverage_year - 1 , 0 , -1):
             total_investment_money += self.reinvestment(self.return_money_from_insurance,
                                                 self.reinvestment_interest_percentage,
-                                                i, 1)
+                                                year, 1)
         return total_investment_money
 
     def reinvestment(self, money_amout, interest, year, compounded):
