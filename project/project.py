@@ -28,7 +28,7 @@ class Tax():
     def income_tax_accumulate(self):
         total_investment_money = 0
         tax_money_back_count = 0
-        for ages in range(self.coverage_year):
+        for ages in range(0, self.coverage_year):
             tax_money_back_count += 1
             if tax_money_back_count <= self.payment_year:
                 total_investment_money += self.reinvestment(self.return_money_from_tax,
