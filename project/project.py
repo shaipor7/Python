@@ -11,7 +11,6 @@ class Tax():
         print("*****************************************")
         print("Second part: Personal Information")
         print("*****************************************")
-        self.age = 27 #int(input("How old are you (years): ")) # 24
         self.tax_base_percentage = 20 #int(input("what is your personal tax ? (percentage): ")) # 5
         self.reinvestment_interest_percentage = 1.5 #float(input("What is your expected interest from investment? (percentage): ")) # 3
 
@@ -29,7 +28,7 @@ class Tax():
     def income_tax_accumulate(self):
         total_investment_money = 0
         tax_money_back_count = 0
-        for ages in range(self.age, self.coverage_year):
+        for ages in range(self.coverage_year):
             tax_money_back_count += 1
             if tax_money_back_count <= self.payment_year:
                 total_investment_money += self.reinvestment(self.return_money_from_tax,
@@ -40,7 +39,7 @@ class Tax():
                                                 self.coverage_year - ages, 1)
         return total_investment_money
     def income_invest_accumulate(self):
-        
+
 
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
