@@ -11,13 +11,13 @@ class Tax():
         print("*****************************************")
         print("Second part: Personal Information")
         print("*****************************************")
-        self.tax_base_percentage = 0 #int(input("what is your personal tax ? (percentage): ")) # 5
+        self.tax_base_percentage = 5 #int(input("what is your personal tax ? (percentage): ")) # 5
         self.reinvestment_interest_percentage = 0 #float(input("What is your expected interest from investment? (percentage): ")) # 3
 
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
 
-        self.total = self.income_tax_accumulate()
+        self.total = self.income_tax_accumulate() + self.income_invest_accumulate()
 
     def __str__(self):
         return str(self.total)
@@ -31,7 +31,6 @@ class Tax():
             total_investment_money += self.reinvestment(self.return_money_from_tax,
                                                 self.reinvestment_interest_percentage,
                                                 year, 1)
-            print(year)
         return total_investment_money
 
     def income_invest_accumulate(self):
