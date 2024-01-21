@@ -20,6 +20,8 @@ class Tax():
 
         self.total = self.income_tax_accumulate() + self.income_invest_accumulate()
 
+        self.interest_per_year = (self.total + self.final_return_money) / (self.payment_amout * self.payment_year)
+
     def __str__(self):
         return str(self.total)
 
