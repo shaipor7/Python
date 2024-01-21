@@ -23,7 +23,7 @@ class Tax():
         self.interest_per_year = (self.total + self.final_return_money) / (self.payment_amout * self.payment_year)
 
     def __str__(self):
-        return str(self.total)
+        return f"{self.total} , {self.interest_per_year}"
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
