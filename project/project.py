@@ -17,7 +17,7 @@ class Tax():
         self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
         self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
 
-        self.total = self.income_invest_accumulate()
+        self.total = self.income_tax_accumulate()
 
     def __str__(self):
         return str(self.total)
@@ -28,13 +28,11 @@ class Tax():
     def income_tax_accumulate(self):
         total_investment_money = 0
         tax_money_back_count = 0
-        for year in range(self.coverage_year - 1 , 0 , -1):
-            tax_money_back_count += 1
-            if tax_money_back_count <= self.payment_year:
-                total_investment_money += self.reinvestment(self.return_money_from_tax,
-                                                    self.reinvestment_interest_percentage,
-                                                    year, 1)
-            print(i)
+        for year in range(self.coverage_year , self.coverage_year - self.payment_year , -1):
+            total_investment_money += self.reinvestment(self.return_money_from_tax,
+                                                self.reinvestment_interest_percentage,
+                                                year, 1)
+            print(year)
         return total_investment_money
 
     def income_invest_accumulate(self):
