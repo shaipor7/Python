@@ -1,10 +1,8 @@
 # ask user name
-Input = input("What's your name? ")
-country = "Thailand"
+Input = input("What's your name? ").capitalize()
 
 # print hello, name 0f user to terminal
-print(f"hello, {Input} from {country}.")
+print(f"hello, {Input}.")
 
-print("hello, " + Input + " from " + country + ".")
 
 # hello, por
