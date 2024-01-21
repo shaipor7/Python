@@ -42,7 +42,7 @@ class Tax():
 
 
     def reinvestment(self, money_amout, interest, year, compounded):
-        return money_amout * (1 + interest / compounded) ** (year * compounded)
+        return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
 
 def main():
