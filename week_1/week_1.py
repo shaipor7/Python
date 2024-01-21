@@ -1,5 +1,5 @@
-# Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
-name = input("What's your name? ").strip().title()
+letter = input("Enter your string: ")
 
-# Print the output
-print(f"hello, {name}")
+replaced = letter.replace("a", "o")
+
+print(replaced)
