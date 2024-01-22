@@ -1,11 +1,9 @@
 class Tax():
     def __init__(self):
-        self.start = input("Starting Amount:")
-        self.after = 
-        50
-        years
-        Return Rate
-        5
+        self.start = input("Starting Amount ($): ")
+        self.after = input("After (years): ")
+        self.return_rate = input("Return rate (%): ")
+        self.compound = input("Compound: ")
         Compound
         continuously
         Additional Contribution
