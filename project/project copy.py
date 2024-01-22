@@ -8,7 +8,7 @@ class Tax():
             self.addition = int(input("Additional Contribution ($): "))
             self.contribute = input("Contibuted each (Month or Year): ")
         except:
-            
+
 
     def __str__(self):
         return f"{self.total} , {self.times} , {self.interest_per_year}, "
@@ -17,12 +17,12 @@ class Tax():
         compound = compound.strip().casefold()
         if compound == "a" or compound == "annually":
             return 1
-        elif compound == "s" or compound == "emiannually":
-            return 1
-        elif compound == "s" or compound == "emiannually":
-            return 1
-        elif compound == "s" or compound == "emiannually":
-            return 1
+        elif compound == "s" or compound == "semiannually":
+            return 2
+        elif compound == "s" or compound == "quarterly":
+            return 4
+        elif compound == "s" or compound == "monthly":
+            return 12
         else : raise ValueError
 
 
