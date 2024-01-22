@@ -3,9 +3,8 @@ class Tax():
         self.start = input("Starting Amount ($): ")
         self.after = input("After (years): ")
         self.return_rate = input("Return rate (%): ")
-        self.compound = input("Compound: ")
-        Compound
-        continuously
+        self.compound = input("Compound (Annually ,Semiannually, Quarterly, Monthly): ")
+        self.addition = input("")
         Additional Contribution
     def __str__(self):
         return f"{self.total} , {self.times} , {self.interest_per_year}, "
