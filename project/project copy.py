@@ -3,9 +3,9 @@ class Tax():
         self.start = self.get_input("Starting Amount ($): ", int)
         self.after = self.get_input("After (years): ", int)
         self.return_rate = self.get_input("Return rate (%): ", float)
-        self.compound = input("Compound (Annually ,Semiannually, Quarterly, Monthly): ")
-        self.addition = int(input("Additional Contribution ($): "))
-        self.contribute = input("Contibuted each (Month or Year): ")
+        self.compound = self.get_validated_input("Compound (Annually, Semiannually, Quarterly, Monthly): ", ["Annually", "Semiannually", "Quarterly", "Monthly"])
+        self.addition = self.get_input("Additional Contribution ($): ", int)
+        self.contribute = self.get_validated_input("Contributed each (Month or Year): ", ["Month", "Year"])
 
     def get_input(self, message, input_type):
         while True:
