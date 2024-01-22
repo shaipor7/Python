@@ -5,22 +5,14 @@ class Tax():
         self.return_rate = int(input("Return rate (%): "))
         self.compound = input("Compound (Annually ,Semiannually, Quarterly, Monthly): ")
         self.addition = int(input("Additional Contribution ($): "))
-        self.
-        Additional Contribution
+        self.contribute = input("Contibuted each (Month or Year): ")
+
     def __str__(self):
         return f"{self.total} , {self.times} , {self.interest_per_year}, "
 
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
-
-    def income_tax_accumulate(self):
-        total_investment_money = 0
-        for year in range(self.coverage_year , self.coverage_year - self.payment_year , -1):
-            total_investment_money += self.reinvestment(self.return_money_from_tax,
-                                                self.reinvestment_interest_percentage,
-                                                year, 1)
-        return total_investment_money
 
     def income_invest_accumulate(self):
         total_investment_money = 0
