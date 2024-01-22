@@ -1,11 +1,15 @@
 class Tax():
     def __init__(self):
         self.start = self.get_input("Starting Amount ($): ", int)
-        self.after = self.get_input("After (years): ", int)
-        self.return_rate = self.get_input("Return rate (%): ", float)
-        self.compound = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
-        self.addition = self.get_input("Additional Contribution ($): ", int)
-        self.contribute = self.get_contribute("Contributed each (Month or Year): ")
+        while True:
+            self.after = self.get_input("After (years): ", int)
+            self.return_rate = self.get_input("Return rate (%): ", float)
+            self.compound = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
+            self.addition = self.get_input("Additional Contribution ($): ", int)
+            self.contribute = self.get_contribute("Contributed each (Month or Year): ")
+            self.continued = input("Additional investment? (yes/no): ").casefold()
+            if self.continued == "no" or self.continued = "n":
+                break
 
     def get_input(self, message, input_type):
         while True:
@@ -16,30 +20,24 @@ class Tax():
 
     def get_compound(self, message):
         while True:
-            user_input = input(message)
-            message = user_input.strip().casefold()
-            if compound == "a" or compound == "annually":
+            Input = input(message).strip().casefold()
+            if Input == "a" or Input == "annually":
                 return 1
-            elif compound == "s" or compound == "semiannually":
+            elif Input == "s" or Input == "semiannually":
                 return 2
-            elif compound == "q" or compound == "quarterly":
+            elif Input == "q" or Input == "quarterly":
                 return 4
-            elif compound == "m" or compound == "monthly":
+            elif Input == "m" or Input == "monthly":
                 return 12
             else : print("Invalid input")
 
     def get_contribute(self, message):
         while True:
-            user_input = input(message)
-            message = user_input.strip().casefold()
-            if compound == "a" or compound == "annually":
-                return 1
-            elif compound == "s" or compound == "semiannually":
-                return 2
-            elif compound == "q" or compound == "quarterly":
-                return 4
-            elif compound == "m" or compound == "monthly":
+            Input = input(message).strip().casefold()
+            if Input == "m" or Input == "month":
                 return 12
+            elif Input == "y" or Input == "year":
+                return 1
             else : print("Invalid input")
 
     def __str__(self):
