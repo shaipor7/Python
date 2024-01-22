@@ -5,7 +5,7 @@ class Tax():
         self.return_rate = self.get_input("Return rate (%): ", float)
         self.compound = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
         self.addition = self.get_input("Additional Contribution ($): ", int)
-        self.contribute = self.get_validated_input("Contributed each (Month or Year): ", ["Month", "Year"])
+        self.contribute = self.get_contribute("Contributed each (Month or Year): ")
 
     def get_input(self, message, input_type):
         while True:
@@ -15,6 +15,20 @@ class Tax():
                 print(f"Invalid input. Please enter a valid {input_type.__name__}.")
 
     def get_compound(self, message):
+        while True:
+            user_input = input(message)
+            message = user_input.strip().casefold()
+            if compound == "a" or compound == "annually":
+                return 1
+            elif compound == "s" or compound == "semiannually":
+                return 2
+            elif compound == "q" or compound == "quarterly":
+                return 4
+            elif compound == "m" or compound == "monthly":
+                return 12
+            else : print("Invalid input")
+
+    def get_contribute(self, message):
         while True:
             user_input = input(message)
             message = user_input.strip().casefold()
