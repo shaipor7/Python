@@ -68,9 +68,6 @@ class Investment():
         self.income_invest_accumulate()
         print(self.investments)
 
-    # def __str__(self):
-    #     return f"{self.total} , {self.times} , {self.interest_per_year}, "
-
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
 
