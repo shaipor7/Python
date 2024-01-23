@@ -74,7 +74,7 @@ class Investment():
 
     def income_invest_accumulate(self):
         total_investment_money = 0
-        for year in range(self.coverage_year - 1 , 0 , -1):
+        for _ in len(self.investments):
             total_investment_money += self.reinvestment(self.return_money_from_insurance,
                                                 self.reinvestment_interest_percentage,
                                                 year, 1)
