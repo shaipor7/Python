@@ -50,9 +50,6 @@ class Information():
                 return 1
             else : print("Invalid input")
 
-    def __str__(self):
-        return f"{self.total} , {self.times} , {self.interest_per_year}, "
-
     def Compound(self, compound):
         compound = compound.strip().casefold()
         if compound == "a" or compound == "annually":
@@ -65,6 +62,10 @@ class Information():
             return 12
         else : raise ValueError
 
+class Investment():
+
+    def __str__(self):
+        return f"{self.total} , {self.times} , {self.interest_per_year}, "
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
