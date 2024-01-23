@@ -75,7 +75,7 @@ class Investment():
                                                 self.investments[i]["after"], self.investments[i]["compound"])
             try:
                 self.investments[i+1]["start"] = self.total_investment_money
-            except:
+            except IndexError:
                 pass
         return self.total_investment_money
 
