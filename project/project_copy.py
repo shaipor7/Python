@@ -65,6 +65,7 @@ class Information():
 class Investment():
     def __init__(self, investments):
         self.investments = investments
+        print(self.investments)
         self.income_invest_accumulate()
 
     # def __str__(self):
