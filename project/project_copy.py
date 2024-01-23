@@ -76,7 +76,7 @@ class Investment():
     def income_invest_accumulate(self):
         self.total_investment_money = self.investments["start"]
         for _ in len(self.investments):
-            self.total_investment_money += self.reinvestment(total_investment_money,
+            self.total_investment_money += self.reinvestment(self.total_investment_money,
                                                 self.investments["return_rate"],
                                                 self.investments["after"], self.investments["compound"])
         return self.total_investment_money
