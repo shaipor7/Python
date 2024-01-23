@@ -53,14 +53,19 @@ class Investment:
         self.total_investment_money = self.calculate_total_investment()
 
     def calculate_total_investment(self):
-        total_investment = 0
-        for investment in self.investments:
-            total_investment = self.reinvestment(investment["start"],
-                                                 investment["return_rate"],
-                                                 investment["after"],
-                                                 investment["compound"])
-            investment["start"] = total_investment_money
-        return total_investment
+        for i, investment in enumerate(self.investments):
+            total_investment_money = self.reinvestment(
+                investment["start"],
+                investment["return_rate"],
+                investment["after"],
+                investment["compound"]
+            )
+
+            # Update the start amount for the next investment, if it exists
+            if i + 1 < len(self.investments):
+                self.investments[i + 1]["start"] = total_investment_money
+
+        return total_investment_money
 
     def reinvestment(self, amount, interest, years, compounded):
         return amount * (1 + interest / 100 / compounded) ** (years * compounded)
