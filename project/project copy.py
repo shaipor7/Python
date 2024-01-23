@@ -1,14 +1,22 @@
 class Tax():
     def __init__(self):
-        self.start = self.get_input("Starting Amount ($): ", int)
+        self.investments = []
+        self.collect_investment_data()
+
+    def collect_investment_data(self):
         while True:
-            self.after = self.get_input("After (years): ", int)
-            self.return_rate = self.get_input("Return rate (%): ", float)
-            self.compound = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
-            self.addition = self.get_input("Additional Contribution ($): ", int)
-            self.contribute = self.get_contribute("Contributed each (Month or Year): ")
-            self.continued = input("Additional investment? (yes/no): ").casefold()
-            if self.continued == "no" or self.continued = "n":
+            investment_data = {}
+            investment_data['start'] = self.get_input("Starting Amount ($): ", int)
+            investment_data['after'] = self.get_input("After (years): ", int)
+            investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
+            investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
+            investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
+            investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
+
+            self.investments.append(investment_data)
+
+            continued = input("Additional investment? (yes/no): ").casefold()
+            if continued in ["no", "n"]:
                 break
 
     def get_input(self, message, input_type):
