@@ -86,8 +86,8 @@ class Investment():
 
 def main():
     Input = Information()
-    
-    print(Input.investments)
+    Invest = Investment(Input.investments)
+    print(Invest)
 
 if __name__ == "__main__":
     main()
