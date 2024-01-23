@@ -1,4 +1,4 @@
-class Tax():
+class Information():
     def __init__(self):
         self.investments = []
         self.collect_investment_data()
@@ -80,8 +80,8 @@ class Tax():
 
 
 def main():
-    tax = Tax()
-    print(tax)
+    Input = Information()
+    print(Input.investments)
 
 if __name__ == "__main__":
     main()
