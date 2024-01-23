@@ -77,7 +77,7 @@ class Investment():
         for _ in len(self.investments):
             total_investment_money += self.reinvestment(total_investment_money,
                                                 self.investments["return_rate"],
-                                                self.investments[""], 1)
+                                                self.investments["after"], self.investments["compound"])
         return total_investment_money
 
     def reinvestment(self, money_amout, interest, year, compounded):
@@ -86,6 +86,7 @@ class Investment():
 
 def main():
     Input = Information()
+    
     print(Input.investments)
 
 if __name__ == "__main__":
