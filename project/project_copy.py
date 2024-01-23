@@ -1,4 +1,4 @@
-class Information:
+class Information():
     def __init__(self):
         self.investments = []
         self.collect_investment_data()
@@ -7,18 +7,19 @@ class Information:
         investment_data = {}
         investment_data['start'] = self.get_input("Starting Amount ($): ", int)
         while True:
-            investment_data = {
-                'after': self.get_input("After (years): ", int),
-                'return_rate': self.get_input("Return rate (%): ", float),
-                'compound': self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): "),
-                # 'addition':  self.get_input("Additional Contribution ($): ", int),
-                # 'contribute': self.get_contribute("Contributed each (Month or Year): "),
-            }
+            investment_data['after'] = self.get_input("After (years): ", int)
+            investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
+            investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
+            # investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
+            # investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
 
             self.investments.append(investment_data)
-            if input("Additional investment? (yes/no): ").casefold() not in ["yes", "y"]:
+            continued = input("Additional investment? (yes/no): ").casefold()
+            if continued in ["yes", "y"]:
+                investment_data = {}
+                pass
+            else:
                 break
-            investment_data = {}
 
     def get_input(self, message, input_type):
         while True:
@@ -28,14 +29,17 @@ class Information:
                 print(f"Invalid input. Please enter a valid {input_type.__name__}.")
 
     def get_compound(self, message):
-        compound_options = {'a': 1, 'annually': 1, 's': 2, 'semiannually': 2,
-                            'q': 4, 'quarterly': 4, 'm': 12, 'monthly': 12}
         while True:
-            user_input = input(message).casefold()
-            if user_input in compound_options:
-                return compound_options[user_input]
-            else:
-                print("Invalid input")
+            Input = input(message).strip().casefold()
+            if Input == "a" or Input == "annually":
+                return 1
+            elif Input == "s" or Input == "semiannually":
+                return 2
+            elif Input == "q" or Input == "quarterly":
+                return 4
+            elif Input == "m" or Input == "monthly":
+                return 12
+            else : print("Invalid input")
 
     # def get_contribute(self, message):
     #     while True:
@@ -46,35 +50,48 @@ class Information:
     #             return 1
     #         else : print("Invalid input")
 
+    def Compound(self, compound):
+        compound = compound.strip().casefold()
+        if compound == "a" or compound == "annually":
+            return 1
+        elif compound == "s" or compound == "semiannually":
+            return 2
+        elif compound == "s" or compound == "quarterly":
+            return 4
+        elif compound == "s" or compound == "monthly":
+            return 12
+        else : raise ValueError
 
-class Investment:
+class Investment():
     def __init__(self, investments):
         self.investments = investments
-        self.total_investment_money = self.calculate_total_investment()
+        self.income_invest_accumulate()
+        print(self.investments)
 
-    def calculate_total_investment(self):
-        for i, investment in enumerate(self.investments):
-            total_investment_money = self.reinvestment(
-                investment["start"],
-                investment["return_rate"],
-                investment["after"],
-                investment["compound"]
-            )
+    def percentage(self, money_amount , percentage):
+        return money_amount * percentage / 100
 
-            # Update the start amount for the next investment, if it exists
-            if i + 1 < len(self.investments):
-                self.investments[i + 1]["start"] = total_investment_money
+    def income_invest_accumulate(self):
+        self.total_investment_money = 0
+        for i in range(len(self.investments)):
+            self.total_investment_money = self.reinvestment(self.investments[i]["start"],
+                                                self.investments[i]["return_rate"],
+                                                self.investments[i]["after"], self.investments[i]["compound"])
+            try:
+                self.investments[i+1]["start"] = self.total_investment_money
+            except:
+                pass
+        return self.total_investment_money
 
-        return total_investment_money
-
-    def reinvestment(self, amount, interest, years, compounded):
-        return amount * (1 + interest / 100 / compounded) ** (years * compounded)
+    def reinvestment(self, money_amout, interest, year, compounded):
+        return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
 
 def main():
-    user_inputs = Information()
-    investment = Investment(user_inputs.investments)
-    print(f"Total Investment Money: {investment.total_investment_money}")
+    Input = Information()
+    Invest = Investment(Input.investments)
+    print(Invest.total_investment_money)
 
 if __name__ == "__main__":
     main()
+"
