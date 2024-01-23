@@ -4,9 +4,9 @@ class Information():
         self.collect_investment_data()
 
     def collect_investment_data(self):
+        investment_data = {}
+        investment_data['start'] = self.get_input("Starting Amount ($): ", int)
         while True:
-            investment_data = {}
-            investment_data['start'] = self.get_input("Starting Amount ($): ", int)
             investment_data['after'] = self.get_input("After (years): ", int)
             investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
             investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
@@ -14,9 +14,9 @@ class Information():
             # investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
 
             self.investments.append(investment_data)
-
             continued = input("Additional investment? (yes/no): ").casefold()
             if continued in ["yes", "y"]:
+                investment_data = {}
                 pass
             else:
                 break
@@ -75,11 +75,11 @@ class Investment():
         return money_amount * percentage / 100
 
     def income_invest_accumulate(self):
-        self.total_investment_money = self.investments["start"]
-        for _ in len(self.investments):
+        self.total_investment_money = self.investments[0]["start"]
+        for i in range(len(self.investments)):
             self.total_investment_money += self.reinvestment(self.total_investment_money,
-                                                self.investments["return_rate"],
-                                                self.investments["after"], self.investments["compound"])
+                                                self.investments[i]["return_rate"],
+                                                self.investments[i]["after"], self.investments[i]["compound"])
         return self.total_investment_money
 
     def reinvestment(self, money_amout, interest, year, compounded):
