@@ -16,7 +16,9 @@ class Information():
             self.investments.append(investment_data)
 
             continued = input("Additional investment? (yes/no): ").casefold()
-            if continued in ["no", "n"]:
+            if continued in ["yes", "y"]:
+                pass
+            else:
                 break
 
     def get_input(self, message, input_type):
