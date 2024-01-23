@@ -65,13 +65,9 @@ class Information():
 class Investment():
     def __init__(self, investments):
         self.investments = investments
-        self.income_invest_accumulate()
-        print(self.investments)
+        self.total_investment_money = self.calculate_total_investment()
 
-    def percentage(self, money_amount , percentage):
-        return money_amount * percentage / 100
-
-    def income_invest_accumulate(self):
+    def calculate_total_investment(self):
         self.total_investment_money = 0
         for i in range(len(self.investments)):
             self.total_investment_money = self.reinvestment(self.investments[i]["start"],
@@ -88,10 +84,9 @@ class Investment():
 
 
 def main():
-    Input = Information()
-    Invest = Investment(Input.investments)
-    print(Invest.total_investment_money)
+    user_inputs = Information()
+    investment = Investment(user_inputs.investments)
+    print(f"Total Investment Money: {investment.total_investment_money}")
 
 if __name__ == "__main__":
     main()
-"
