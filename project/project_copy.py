@@ -63,6 +63,8 @@ class Information():
         else : raise ValueError
 
 class Investment():
+    def __init__(self, investments):
+        self.investments = investments
 
     def __str__(self):
         return f"{self.total} , {self.times} , {self.interest_per_year}, "
