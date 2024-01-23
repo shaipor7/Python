@@ -16,9 +16,9 @@ class Information:
             }
 
             self.investments.append(investment_data)
-            investment_data = {}
             if input("Additional investment? (yes/no): ").casefold() not in ["yes", "y"]:
                 break
+            investment_data = {}
 
     def get_input(self, message, input_type):
         while True:
