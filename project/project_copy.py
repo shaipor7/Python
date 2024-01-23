@@ -59,6 +59,7 @@ class Investment:
                                                  investment["return_rate"],
                                                  investment["after"],
                                                  investment["compound"])
+            investment["start"] = total_investment_money
         return total_investment
 
     def reinvestment(self, amount, interest, years, compounded):
