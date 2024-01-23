@@ -73,11 +73,11 @@ class Investment():
         return money_amount * percentage / 100
 
     def income_invest_accumulate(self):
-        total_investment_money = 0
+        total_investment_money = self.investments["start"]
         for _ in len(self.investments):
-            total_investment_money += self.reinvestment(self.return_money_from_insurance,
-                                                self.reinvestment_interest_percentage,
-                                                year, 1)
+            total_investment_money += self.reinvestment(total_investment_money,
+                                                self.investments["return_rate"],
+                                                self.investments[""], 1)
         return total_investment_money
 
     def reinvestment(self, money_amout, interest, year, compounded):
