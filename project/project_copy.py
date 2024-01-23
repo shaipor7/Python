@@ -67,7 +67,10 @@ class Investment():
         self.investments = investments
         self.total_investment_money = self.calculate_total_investment()
 
-    def calculate_total_investment(self):
+    def percentage(self, money_amount , percentage):
+        return money_amount * percentage / 100
+
+    def income_invest_accumulate(self):
         self.total_investment_money = 0
         for i in range(len(self.investments)):
             self.total_investment_money = self.reinvestment(self.investments[i]["start"],
@@ -75,7 +78,7 @@ class Investment():
                                                 self.investments[i]["after"], self.investments[i]["compound"])
             try:
                 self.investments[i+1]["start"] = self.total_investment_money
-            except IndexError:
+            except:
                 pass
         return self.total_investment_money
 
@@ -90,3 +93,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+"
