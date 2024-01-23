@@ -7,19 +7,19 @@ class Information():
         investment_data = {}
         investment_data['start'] = self.get_input("Starting Amount ($): ", int)
         while True:
-            investment_data['after'] = self.get_input("After (years): ", int)
-            investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
-            investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
-            # investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
-            # investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
+            investment_data = {
+                'after': self.get_input("After (years): ", int),
+                'return_rate': self.get_input("Return rate (%): ", float),
+                'compound': self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): "),
+                # 'addition':  self.get_input("Additional Contribution ($): ", int),
+                # 'contribute': self.get_contribute("Contributed each (Month or Year): "),
+            }
 
             self.investments.append(investment_data)
-            continued = input("Additional investment? (yes/no): ").casefold()
-            if continued in ["yes", "y"]:
-                investment_data = {}
-                pass
-            else:
+            investment_data = {}
+            if input("Additional investment? (yes/no): ").casefold() not in ["yes", "y"]:
                 break
+
 
     def get_input(self, message, input_type):
         while True:
