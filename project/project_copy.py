@@ -4,9 +4,10 @@ class Information:
         self.collect_investment_data()
 
     def collect_investment_data(self):
+        investment_data = {}
+        investment_data['start'] = self.get_input("Starting Amount ($): ", int)
         while True:
             investment_data = {
-                'start': self.get_input("Starting Amount ($): ", int),
                 'after': self.get_input("After (years): ", int),
                 'return_rate': self.get_input("Return rate (%): ", float),
                 'compound': self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): "),
@@ -15,7 +16,7 @@ class Information:
             }
 
             self.investments.append(investment_data)
-
+            investment_data = {}
             if input("Additional investment? (yes/no): ").casefold() not in ["yes", "y"]:
                 break
 
