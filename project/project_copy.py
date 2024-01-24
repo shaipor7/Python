@@ -10,8 +10,8 @@ class Information():
             investment_data['after'] = self.get_input("After (years): ", int)
             investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
             investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
-            # investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
-            # investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
+            investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
+            investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
 
             self.investments.append(investment_data)
             continued = input("Additional investment? (yes/no): ").casefold()
@@ -41,14 +41,14 @@ class Information():
                 return 12
             else : print("Invalid input")
 
-    # def get_contribute(self, message):
-    #     while True:
-    #         Input = input(message).strip().casefold()
-    #         if Input == "m" or Input == "month":
-    #             return 12
-    #         elif Input == "y" or Input == "year":
-    #             return 1
-    #         else : print("Invalid input")
+    def get_contribute(self, message):
+        while True:
+            Input = input(message).strip().casefold()
+            if Input == "m" or Input == "month":
+                return 12
+            elif Input == "y" or Input == "year":
+                return 1
+            else : print("Invalid input")
 
     def Compound(self, compound):
         compound = compound.strip().casefold()
@@ -86,14 +86,14 @@ class Investment():
 
     def addition(self):
         self.total_monthly = 0
-        total_months = self.investments[0]["after"] * 12
+        total_months = self.investments[0]["after"] * self.investments[0]["contribute"]
         compound_frequency = self.investments[0]["compound"]
         annual_interest_rate = self.investments[0]["return_rate"]
-        monthly_deposit = self.investments[0]["return_rate"]
+        monthly_deposit = self.investments[0]["addition"]
         # Calculate the future value for each monthly deposit
         for month in range(1, total_months + 1):
             # Time left until the end of the 10 years (in years)
-            time_left = (total_months - month + 1) / 12
+            time_left = (total_months - month + 1) / self.investments[0]["contribute"]
 
             # Number of times interest applied to this particular deposit
             compound_times = compound_frequency * time_left
