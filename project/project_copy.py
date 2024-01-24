@@ -2,7 +2,7 @@ class Information():
     def __init__(self):
         self.investments = []
         self.collect_investment_data()
-
+    def 
     def collect_investment_data(self):
         investment_data = {}
         investment_data['start'] = self.get_input("Starting Amount ($): ", int)
