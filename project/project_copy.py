@@ -82,39 +82,32 @@ def get_input(message, input_type):
 # Check the input type and re-prompt the user if it's not, then then convert to numbers
 def get_compound(message):
     while True:
-        Input = input(message).strip().casefold()
-        if Input == "a" or Input == "annually":
-            return 1
-        elif Input == "s" or Input == "semiannually":
-            return 2
-        elif Input == "q" or Input == "quarterly":
-            return 4
-        elif Input == "m" or Input == "monthly":
-            return 12
-        else : print("Invalid input")
+        try:
+            Input = input(message).strip().casefold()
+            if Input == "a" or Input == "annually":
+                return 1
+            elif Input == "s" or Input == "semiannually":
+                return 2
+            elif Input == "q" or Input == "quarterly":
+                return 4
+            elif Input == "m" or Input == "monthly":
+                return 12
+            else : raise ValueError
+        except ValueError:
+            print("Invalid input")
 
 # Check the input type and re-prompt the user if it's not, then convert to numbers
 def get_contribute(message):
     while True:
-        Input = input(message).strip().casefold()
-        if Input == "m" or Input == "month":
-            return 12
-        elif Input == "y" or Input == "year":
-            return 1
-        else : print("Invalid input")
-
-
-def Compound(compound):
-    compound = compound.strip().casefold()
-    if compound == "a" or compound == "annually":
-        return 1
-    elif compound == "s" or compound == "semiannually":
-        return 2
-    elif compound == "s" or compound == "quarterly":
-        return 4
-    elif compound == "s" or compound == "monthly":
-        return 12
-    else : raise ValueError
+        try:
+            Input = input(message).strip().casefold()
+            if Input == "m" or Input == "month":
+                return 12
+            elif Input == "y" or Input == "year":
+                return 1
+            else : raise ValueError
+        except ValueError:
+            print("Invalid input")
 
 if __name__ == "__main__":
     main()
