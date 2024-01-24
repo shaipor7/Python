@@ -15,11 +15,13 @@ class Investment():
         return self.total_investment_money
 
     def addition(self):
+        # Assign the values
         self.total_monthly = 0
         total_months = self.investments[0]["after"] * self.investments[0]["contribute"]
         compound_frequency = self.investments[0]["compound"]
         annual_interest_rate = self.investments[0]["return_rate"] / 100
         monthly_deposit = self.investments[0]["addition"]
+
         # Calculate the future value for each monthly deposit
         for month in range(1, total_months):
             # Time left until the end of the 10 years (in years)
@@ -38,6 +40,7 @@ class Investment():
 
         return self.total_monthly
 
+    # Compounded interest formula
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
@@ -47,6 +50,7 @@ def main():
     Invest = Investment(Input)
     print(Invest.income_invest_accumulate() +Invest.addition())
 
+# Get user input as a list of dict
 def collect_investment_data():
     investments = []
     investment_data = {}
@@ -67,6 +71,7 @@ def collect_investment_data():
             break
     return investments
 
+# Check the input type and re-prompt the user if it's not
 def get_input(message, input_type):
     while True:
         try:
@@ -74,6 +79,7 @@ def get_input(message, input_type):
         except ValueError:
             print(f"Invalid input. Please enter a valid {input_type.__name__}.")
 
+# Check the input type and re-prompt the user if it's not, then then convert to numbers
 def get_compound(message):
     while True:
         Input = input(message).strip().casefold()
@@ -87,6 +93,7 @@ def get_compound(message):
             return 12
         else : print("Invalid input")
 
+# Check the input type and re-prompt the user if it's not, then convert to numbers
 def get_contribute(message):
     while True:
         Input = input(message).strip().casefold()
@@ -95,6 +102,7 @@ def get_contribute(message):
         elif Input == "y" or Input == "year":
             return 1
         else : print("Invalid input")
+
 
 def Compound(compound):
     compound = compound.strip().casefold()
