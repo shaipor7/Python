@@ -70,7 +70,6 @@ class Investment():
         self.investments = investments
         self.income_invest_accumulate()
         self.addition()
-        print(self.investments)
 
     def percentage(self, money_amount , percentage):
         return money_amount * percentage / 100
