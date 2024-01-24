@@ -68,11 +68,6 @@ class Information():
 class Investment():
     def __init__(self, investments):
         self.investments = investments
-        self.income_invest_accumulate()
-        self.addition()
-
-    def percentage(self, money_amount , percentage):
-        return money_amount * percentage / 100
 
     def income_invest_accumulate(self):
         self.total_investment_money = 0
@@ -109,6 +104,7 @@ class Investment():
         self.total_monthly += self.investments[0]["start"]
 
         return self.total_monthly
+
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
@@ -116,7 +112,7 @@ class Investment():
 def main():
     Input = Information()
     Invest = Investment(Input.investments)
-    print(Invest.total_investment_money +Invest.total_monthly)
+    print(Invest.income_invest_accumulate() +Invest.addition())
 
 if __name__ == "__main__":
     main()
