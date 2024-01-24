@@ -1,4 +1,4 @@
-from project import 
+from project import Information, Investment
 
 def test_function_1():
     ...
