@@ -2,11 +2,13 @@ from project_copy import Investment, collect_investment_data, get_input, get_com
 import pytest
 
 def test_get_input(mocker):
-    mocker.patch('builtins.input', return_value='1')
-    assert get_input("Enter a number: ", int) == 1
-    mocker.patch('builtins.input', return_value='a')
-    with pytest.raises(ValueError):
-        assert get_input("Enter a number: ", int) == 1
+    mocker.patch('builtins.input', side_effect=['not a number', '5', '3.14'])
+
+    result_int = get_input("Enter a number: ", int)
+    assert result_int == 5
+
+    result_float = get_input("Enter a float: ", float)
+    assert result_float == 3.14
     # assert get_input("1", int) == 1
     # assert get_input("0.1", float) == 0.1
     # assert get_input("1", float) == 1
