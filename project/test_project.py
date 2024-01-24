@@ -1,7 +1,8 @@
-from project import Information, Investment
+from project_copy import Information, Investment
 
-def test_function_1():
-    ...
+def test_init_Information():
+    information = Information()
+    
 
 
 def test_function_2():
