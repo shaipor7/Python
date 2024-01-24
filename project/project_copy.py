@@ -68,8 +68,6 @@ class Information():
 class Investment():
     def __init__(self, investments):
         self.investments = investments
-        print(self.investments)
-        print(len(self.investments))
         self.income_invest_accumulate()
         self.addition()
         print(self.investments)
@@ -118,8 +116,7 @@ class Investment():
 
 def main():
     Input = Information()
-    print(Input)
-    Invest = Investment(Input)
+    Invest = Investment(Input.investments)
     print(Invest.total_investment_money +Invest.total_monthly)
 
 if __name__ == "__main__":
