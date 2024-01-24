@@ -91,7 +91,7 @@ class Investment():
         annual_interest_rate = self.investments[0]["return_rate"] / 100
         monthly_deposit = self.investments[0]["addition"]
         # Calculate the future value for each monthly deposit
-        for month in range(1, total_months + 1):
+        for month in range(1, total_months):
             # Time left until the end of the 10 years (in years)
             time_left = (total_months - month + 1) / self.investments[0]["contribute"]
 
@@ -103,6 +103,8 @@ class Investment():
 
             # Add the future value of this deposit to the total amount
             self.total_monthly += future_value
+
+        self.total_monthly += self.investments[0]["start"]
 
         return self.total_monthly
     def reinvestment(self, money_amout, interest, year, compounded):
