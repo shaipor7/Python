@@ -109,10 +109,29 @@ class Investment():
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
 
+
 def main():
     Input = Information()
     Invest = Investment(Input.investments)
     print(Invest.income_invest_accumulate() +Invest.addition())
 
+def collect_investment_data():
+    investment_data = {}
+    investment_data['start'] = self.get_input("Starting Amount ($): ", int)
+    while True:
+        investment_data['after'] = self.get_input("After (years): ", int)
+        investment_data['return_rate'] = self.get_input("Return rate (%): ", float)
+        investment_data['compound'] = self.get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
+        investment_data['addition'] = self.get_input("Additional Contribution ($): ", int)
+        investment_data['contribute'] = self.get_contribute("Contributed each (Month or Year): ")
+
+        self.investments.append(investment_data)
+        continued = input("Additional investment? (yes/no): ").casefold()
+        if continued in ["yes", "y"]:
+            investment_data = {}
+            pass
+        else:
+            break
+    return
 if __name__ == "__main__":
     main()
