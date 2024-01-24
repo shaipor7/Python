@@ -18,4 +18,4 @@ for month in range(1, total_months + 1):
     # Add the future value of this deposit to the total amount
     total_amount += future_value
 
-total_amount
+print(total_amount)
