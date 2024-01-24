@@ -4,7 +4,7 @@ class Information():
         self.collect_investment_data()
 
     def __str__(self):
-        return self.investments
+        return str(self.investments)
 
     def collect_investment_data(self):
         investment_data = {}
@@ -116,6 +116,7 @@ class Investment():
 
 def main():
     Input = Information()
+    print(Input)
     Invest = Investment(Input)
     print(Invest.total_investment_money +Invest.total_monthly)
 
