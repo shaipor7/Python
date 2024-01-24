@@ -5,7 +5,7 @@ total_months = 10 * 12  # Total months in 10 years
 total_amount = 0  # Initialize total amount
 
 # Calculate the future value for each monthly deposit
-for month in range(1, total_months + 1):
+for month in range(1, total_months):
     # Time left until the end of the 10 years (in years)
     time_left = (total_months - month + 1) / 12
 
