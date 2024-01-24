@@ -66,6 +66,7 @@ class Investment():
     def __init__(self, investments):
         self.investments = investments
         self.income_invest_accumulate()
+        self.addition()
         print(self.investments)
 
     def percentage(self, money_amount , percentage):
@@ -84,7 +85,26 @@ class Investment():
         return self.total_investment_money
 
     def addition(self):
-        
+        self.total_monthly = 0
+        total_months = self.investments[0]["after"] * 12
+        compound_frequency = self.investments[0]["compound"]
+        annual_interest_rate = self.investments[0]["return_rate"]
+        monthly_deposit = self.investments[0]["return_rate"]
+        # Calculate the future value for each monthly deposit
+        for month in range(1, total_months + 1):
+            # Time left until the end of the 10 years (in years)
+            time_left = (total_months - month + 1) / 12
+
+            # Number of times interest applied to this particular deposit
+            compound_times = compound_frequency * time_left
+
+            # Future value of this particular deposit
+            future_value = monthly_deposit * ((1 + annual_interest_rate / compound_frequency) ** compound_times)
+
+            # Add the future value of this deposit to the total amount
+            self.total_monthly += future_value
+
+        return self.total_monthly
     def reinvestment(self, money_amout, interest, year, compounded):
         return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
@@ -92,7 +112,7 @@ class Investment():
 def main():
     Input = Information()
     Invest = Investment(Input.investments)
-    print(Invest.total_investment_money)
+    print(Invest.total_investment_money +Invest.total_monthly)
 
 if __name__ == "__main__":
     main()
