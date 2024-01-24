@@ -4,14 +4,11 @@ import pytest
 def test_get_input(mocker):
     mocker.patch('builtins.input', side_effect=['ABC', '1', '1.0' , '0.1'])
 
-    result_int = get_input("Enter a number: ", int)
-    assert result_int == 1
+    assert get_input("Enter a number: ", int) == 1
 
-    result_float = get_input("Enter a float: ", int)
-    assert result_float == 1
+    assert get_input("Enter a number: ", int) == 1
 
-    result_float = get_input("Enter a float: ", int)
-    assert result_float == 1
+    assert get_input("Enter a number: ", float) == 0.1
     # assert get_input("1", int) == 1
     # assert get_input("0.1", float) == 0.1
     # assert get_input("1", float) == 1
