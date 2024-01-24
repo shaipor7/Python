@@ -2,7 +2,10 @@ class Information():
     def __init__(self):
         self.investments = []
         self.collect_investment_data()
-    def 
+
+    def __str__(self):
+        return self.investments
+
     def collect_investment_data(self):
         investment_data = {}
         investment_data['start'] = self.get_input("Starting Amount ($): ", int)
@@ -113,7 +116,7 @@ class Investment():
 
 def main():
     Input = Information()
-    Invest = Investment(Input.investments)
+    Invest = Investment(Input)
     print(Invest.total_investment_money +Invest.total_monthly)
 
 if __name__ == "__main__":
