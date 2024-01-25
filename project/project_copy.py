@@ -12,7 +12,7 @@ class Investment():
                 self.investments[i+1]["start"] = self.total_investment_money
             except:
                 pass
-        return format(round(self.total_investment_money,2), ",")
+        return round(self.total_investment_money,2)
 
     def addition(self):
         # Assign the values
@@ -38,7 +38,7 @@ class Investment():
         if monthly_deposit > 0:
             self.total_monthly += self.investments[0]["start"]
 
-        return format(round(self.total_monthly,2), ",")
+        return round(self.total_monthly,2)
 
     # Compounded interest formula
     def reinvestment(self, money_amout, interest, year, compounded):
@@ -51,7 +51,7 @@ def main():
     Invest = Investment(Input)
     print(Invest.income_invest_accumulate())
     print(Invest.addition())
-    print(Invest.income_invest_accumulate()+Invest.addition())
+    print(f"{Invest.income_invest_accumulate()+Invest.addition():,}")
 
 # Get user input as a list of dict
 def collect_investment_data():
