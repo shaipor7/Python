@@ -18,5 +18,6 @@ def test_get_contribute(mocker):
     assert get_contribute("Enter: ") == 1
 
 def test_income_invest_accumulate():
-    Input = [{}]
+    Input = [{'start': 1000, 'after': 10, 'return_rate': 5.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     Invest = Investment(Input)
+    assert Invest.total_investment_money == 
