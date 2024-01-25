@@ -12,9 +12,9 @@ def test_get_compound(mocker):
     assert get_compound("Enter: ") == 1
     assert get_compound("Enter: ") == 12
 
-
 def test_get_contribute(mocker):
     mocker.patch('builtins.input', side_effect=['m', '0', 'year'])
     assert get_contribute("Enter: ") == 12
     assert get_contribute("Enter: ") == 1
 
+def test_
