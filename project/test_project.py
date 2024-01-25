@@ -17,4 +17,5 @@ def test_get_contribute(mocker):
     assert get_contribute("Enter: ") == 12
     assert get_contribute("Enter: ") == 1
 
-def test_
+def test_income_invest_accumulate():
+    
