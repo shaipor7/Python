@@ -47,8 +47,10 @@ class Investment():
 
 def main():
     Input = collect_investment_data()
+    print(Input)
     Invest = Investment(Input)
-    print(Invest.income_invest_accumulate() +Invest.addition())
+    print(Invest.income_invest_accumulate())
+    print(Invest.addition())
 
 # Get user input as a list of dict
 def collect_investment_data():
