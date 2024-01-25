@@ -36,7 +36,7 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-
+            self.total_monthly +=
         if monthly_deposit > 0:
             self.total_monthly += self.investments[0]["start"]
 
