@@ -27,9 +27,9 @@ class Investment():
             self.total_monthly += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
             print(self.total_monthly)
             # Calculate the future value for each monthly deposit
-            for month in range(1, total_months + 1):
+            for month in range(1, total_months):
                 # Time left until the end of the 10 years (in years)
-                time_left = (total_months - month + 1) / self.investments[i]["contribute"]
+                time_left = (total_months - month) / self.investments[i]["contribute"]
 
                 # Number of times interest applied to this particular deposit
                 compound_times = compound_frequency * time_left
