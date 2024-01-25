@@ -12,7 +12,7 @@ class Investment():
                 self.investments[i+1]["start"] = self.total_investment_money
             except:
                 pass
-        return self.total_investment_money
+        return round(self.total_investment_money,2)
 
     def addition(self):
         # Assign the values
@@ -35,10 +35,10 @@ class Investment():
 
             # Add the future value of this deposit to the total amount
             self.total_monthly += future_value
+        if monthly_deposit > 0:
+            self.total_monthly += self.investments[0]["start"]
 
-        self.total_monthly += self.investments[0]["start"]
-
-        return self.total_monthly
+        return round(self.total_monthly,2)
 
     # Compounded interest formula
     def reinvestment(self, money_amout, interest, year, compounded):
