@@ -22,4 +22,7 @@ def test_income_invest_accumulate():
     Invest = Investment(Input)
     assert Invest.income_invest_accumulate() == 2707.04
 
-def
+def test_addition():
+    Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
+    Invest = Investment(Input)
+    assert Invest.addition() == 204844.98
