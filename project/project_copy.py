@@ -23,7 +23,7 @@ class Investment():
             compound_frequency = self.investments[i]["compound"]
             annual_interest_rate = self.investments[i]["return_rate"] / 100
             monthly_deposit = self.investments[i]["addition"]
-            if i > 1:
+            if i > 0:
                 self.total_monthly += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
             # Calculate the future value for each monthly deposit
             for month in range(1, total_months):
