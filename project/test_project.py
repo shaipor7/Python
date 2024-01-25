@@ -33,5 +33,5 @@ def test_addition():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     Invest = Investment(Input)
-    assert Invest.addition() == 0
+    assert Invest.addition() == 83264.96
 
