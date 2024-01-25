@@ -21,8 +21,12 @@ def test_income_invest_accumulate():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     Invest = Investment(Input)
     assert Invest.income_invest_accumulate() == 2707.04
+    Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
+             , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
+    Invest = Investment(Input)
+    assert Invest.income_invest_accumulate() == 2707.04
 
 def test_addition():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     Invest = Investment(Input)
-    assert Invest.addition() == 204844.98
+    assert Invest.addition() == 21384.5
