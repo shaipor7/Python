@@ -16,6 +16,7 @@ class Investment():
 
     def addition(self):
         self.total_monthly = 0
+        self.reinvest_dca = 0
         for i in range(len(self.investments)):
             # Assign the values
             total_year = self.investments[i]["after"]
@@ -37,9 +38,9 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            for 
+            for
                 print(self.total_monthly)
-                self.total_monthly = self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
+                self.reinvest_dca += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
                 print(self.total_monthly)
             if monthly_deposit > 0:
                 self.total_monthly += monthly_deposit
