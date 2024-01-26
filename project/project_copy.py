@@ -16,6 +16,7 @@ def addition(investments):
     reinvest_dca = 0
     for i in range(len(investments)):
         print(investments)
+        print(investments_dca)
         # Assign the values
         total_year = investments[i]["after"]
         total_months = total_year * investments[i]["contribute"]
