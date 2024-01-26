@@ -1,4 +1,4 @@
-from project_copy import Investment, collect_investment_data, get_input, get_compound, get_contribute
+from project_copy import get_input, get_compound, get_contribute, income_invest_accumulate, addition, reinvestment
 import pytest
 
 def test_get_input(mocker):
@@ -19,20 +19,18 @@ def test_get_contribute(mocker):
 
 def test_income_invest_accumulate():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    Invest = Investment(Input)
-    assert Invest.income_invest_accumulate(Input) == 2707.04
+    assert income_invest_accumulate(Input) == 2707.04
+
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    Invest = Investment(Input)
-    assert Invest.income_invest_accumulate(Input) == 7328.07
+    assert income_invest_accumulate(Input) == 7328.07
 
 def test_addition():
     # Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    # Invest = Investment(Input)
-    # assert Invest.addition() == 20484.5
-    # Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
-    #          , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    # Invest = Investment(Input)
-    # assert Invest.addition() == 83264.96
+    # assert addition(Input) == 20484.5
+
+    Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
+             , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
+    assert addition(Input) == 83264.96
     ...
 
