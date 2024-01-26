@@ -1,19 +1,19 @@
 class Investment():
     def __init__(self, investments):
         self.investments = investments
+        self.income_invest_accumulate(investments)
 
-    def income_invest_accumulate(self):
-        self.total_investment_money = 0
+    def income_invest_accumulate(self, investments):
+        total_investment_money = 0
         for i in range(len(self.investments)):
-            self.total_investment_money = self.reinvestment(self.investments[i]["start"],
-                                                self.investments[i]["return_rate"],
-                                                self.investments[i]["after"], self.investments[i]["compound"])
+            total_investment_money = self.reinvestment(investments[i]["start"],
+                                                investments[i]["return_rate"],
+                                                investments[i]["after"], investments[i]["compound"])
             try:
-                addition = self.addition()
-                self.investments[i+1]["start"] = self.total_investment_money + addition
+                investments[i+1]["start"] = total_investment_money
             except:
                 pass
-        return round(self.total_investment_money,2)
+        return round(total_investment_money,2)
 
     def addition(self):
         self.total_monthly = 0
