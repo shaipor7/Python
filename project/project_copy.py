@@ -1,7 +1,8 @@
 class Investment():
     def __init__(self, investments):
-        self.investments = investments
+        # self.investments = investments
         self.income_invest_accumulate(investments)
+        self.addition(investments)
 
     def income_invest_accumulate(self, investments):
         total_investment_money = 0
@@ -15,23 +16,23 @@ class Investment():
                 pass
         return round(total_investment_money,2)
 
-    def addition(self):
-        investments = self.investments
+    def addition(self, investments):
+        investments_dca = investments
         self.total_monthly = 0
         self.reinvest_dca = 0
-        for i in range(len(self.investments)):
-            print(self.investments)
+        for i in range(len(investments)):
+            print(investments)
             # Assign the values
-            total_year = self.investments[i]["after"]
-            total_months = total_year * self.investments[i]["contribute"]
-            compound_frequency = self.investments[i]["compound"]
-            annual_interest_rate = self.investments[i]["return_rate"]
-            monthly_deposit = self.investments[i]["addition"]
+            total_year = investments[i]["after"]
+            total_months = total_year * investments[i]["contribute"]
+            compound_frequency = investments[i]["compound"]
+            annual_interest_rate = investments[i]["return_rate"]
+            monthly_deposit = investments[i]["addition"]
 
             # Calculate the future value for each monthly deposit
             for month in range(1, total_months):
                 # Time left until the end of the 10 years (in years)
-                time_left = (total_months - month) / self.investments[i]["contribute"]
+                time_left = (total_months - month) / investments[i]["contribute"]
 
                 # Number of times interest applied to this particular deposit
                 compound_times = compound_frequency * time_left
@@ -41,12 +42,12 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            del investments[i]
-            print(investments)
-            if len(investments) > 0:
-                investments[i]["start"] = self.total_monthly
+            del investments_dca[i]
+            print(investments_dca)
+            if len(investments_dca) > 0:
+                investments_dca[i]["start"] = self.total_monthly
                 print(self.total_monthly)
-                self.reinvest_dca += self.income_invest_accumulate(investments)
+                self.reinvest_dca += self.income_invest_accumulate(investments_dca)
                 print(self.total_monthly)
         if monthly_deposit > 0:
             self.total_monthly += monthly_deposit
