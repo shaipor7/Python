@@ -5,7 +5,7 @@ class Investment():
 
     def income_invest_accumulate(self, investments):
         total_investment_money = 0
-        for i in range(len(self.investments)):
+        for i in range(len(investments)):
             total_investment_money = self.reinvestment(investments[i]["start"],
                                                 investments[i]["return_rate"],
                                                 investments[i]["after"], investments[i]["compound"])
@@ -16,6 +16,7 @@ class Investment():
         return round(total_investment_money,2)
 
     def addition(self):
+        investments = self.investments
         self.total_monthly = 0
         self.reinvest_dca = 0
         for i in range(len(self.investments)):
@@ -39,10 +40,11 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            # for
-            #     print(self.total_monthly)
-            #     self.reinvest_dca += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
-            #     print(self.total_monthly)
+            investments = 
+            for
+                print(self.total_monthly)
+                self.reinvest_dca += self.income_invest_accumulate()
+                print(self.total_monthly)
             if monthly_deposit > 0:
                 self.total_monthly += monthly_deposit
 
