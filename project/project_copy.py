@@ -37,7 +37,7 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            try:
+            for 
                 print(self.total_monthly)
                 self.total_monthly = self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
                 print(self.total_monthly)
