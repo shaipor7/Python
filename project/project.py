@@ -1,24 +1,27 @@
 from tabulate import tabulate
 
+# Function to calculate starting amount of money
 def income_invest_accumulate(investments):
     total_investment_money = 0
     for i in range(len(investments)):
         total_investment_money = reinvestment(investments[i]["start"],
                                         investments[i]["return_rate"],
                                         investments[i]["after"], investments[i]["compound"])
-        # continue invest for more terms
+        # Continue invest for more terms
         try:
             investments[i+1]["start"] = total_investment_money
         except:
             pass
     return round(total_investment_money,2)
 
+# Function to calculate DCA
 def addition(investments):
+
+    # Assign the values
     investments_dca = investments.copy()
     reinvest_dca = 0
     for i in range(len(investments)):
         monthly = 0
-        # Assign the values
         total_year = investments[i]["after"]
         total_months = total_year * investments[i]["contribute"]
         compound_frequency = investments[i]["compound"]
@@ -27,21 +30,23 @@ def addition(investments):
 
         # Calculate the future value for each monthly deposit
         for month in range(1, total_months):
-            # Time left until the end of the 10 years (in years)
+            # Time left until the end of the X years
             time_left = (total_months - month) / investments[i]["contribute"]
 
-            # Number of times interest applied to this particular deposit
+            # Conver to number of times interest
             compound_times = compound_frequency * time_left
 
             # Future value of this particular deposit
             future_value = monthly_deposit * ((1 + annual_interest_rate / 100 / compound_frequency) ** compound_times)
 
-            # Add the future value of this deposit to the total amount
+            # Add the future value to the total amount
             monthly += future_value
 
+        # Check the final amount which is not calculated
         if monthly_deposit > 0:
             monthly += monthly_deposit
 
+        # Calculate reinvest for each DCA term
         del investments_dca[0]
 
         if len(investments_dca) > 0:
