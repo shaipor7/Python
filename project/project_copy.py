@@ -11,7 +11,7 @@ def income_invest_accumulate(investments):
     return round(total_investment_money,2)
 
 def addition(investments):
-    investments_dca = investments
+    investments_dca = investments.copy()
     total_monthly = 0
     reinvest_dca = 0
     for i in range(len(investments)):
