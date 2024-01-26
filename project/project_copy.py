@@ -15,8 +15,8 @@ def addition(investments):
     reinvest_dca = 0
     for i in range(len(investments)):
         total_monthly = 0
-        # print(investments)
-        # print(investments_dca)
+        print(investments)
+        print(investments_dca)
         # Assign the values
         total_year = investments[i]["after"]
         total_months = total_year * investments[i]["contribute"]
@@ -37,16 +37,18 @@ def addition(investments):
 
             # Add the future value of this deposit to the total amount
             total_monthly += future_value
-        print(total_monthly)
+
+        if monthly_deposit > 0:
+            total_monthly += monthly_deposit
+
+        # print(total_monthly)
         del investments_dca[0]
         # print(investments_dca)
         if len(investments_dca) > 0:
             investments_dca[i]["start"] = total_monthly
             # print(total_monthly)
             reinvest_dca += income_invest_accumulate(investments_dca)
-            print(reinvest_dca)
-    if monthly_deposit > 0:
-        total_monthly += monthly_deposit
+            # print(reinvest_dca)
 
     return round(total_monthly+reinvest_dca,2)
 
