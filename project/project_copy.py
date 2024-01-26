@@ -41,7 +41,7 @@ class Investment():
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
             investments = investments.pop(i)
-            for
+            if len(investments) > 0:
                 print(self.total_monthly)
                 self.reinvest_dca += self.income_invest_accumulate(investments)
                 print(self.total_monthly)
