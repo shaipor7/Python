@@ -56,7 +56,7 @@ def main():
     Input = collect_investment_data()
     # Prepare data for tabulation
     headers = ["Start", "After (Years)", "Return Rate (%)", "Compound", "Addition", "Contribute"]
-    rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in investments]
+    rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in Input]
 
     # Create a tabulated string
     table = tabulate(rows, headers=headers, tablefmt="grid")
