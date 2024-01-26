@@ -20,6 +20,7 @@ class Investment():
         self.total_monthly = 0
         self.reinvest_dca = 0
         for i in range(len(self.investments)):
+            print(self.investments)
             # Assign the values
             total_year = self.investments[i]["after"]
             total_months = total_year * self.investments[i]["contribute"]
