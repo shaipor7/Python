@@ -38,10 +38,10 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            for
-                print(self.total_monthly)
-                self.reinvest_dca += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
-                print(self.total_monthly)
+            # for
+            #     print(self.total_monthly)
+            #     self.reinvest_dca += self.reinvestment(self.total_monthly, annual_interest_rate, total_year, compound_frequency)
+            #     print(self.total_monthly)
             if monthly_deposit > 0:
                 self.total_monthly += monthly_deposit
 
