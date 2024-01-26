@@ -45,8 +45,7 @@ def addition(investments):
             investments_dca[0]["start"] = monthly
             reinvest_dca += income_invest_accumulate(investments_dca)
 
-
-    return round(monthly+reinvest_dca,2)
+    return round(monthly + reinvest_dca,2)
 
 # Compounded interest formula
 def reinvestment(money_amout, interest, year, compounded):
