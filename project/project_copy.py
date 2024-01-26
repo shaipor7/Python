@@ -42,6 +42,7 @@ class Investment():
                 self.total_monthly += future_value
             investments = investments.pop(i)
             if len(investments) > 0:
+                investments[i]["start"] = self.total_monthly
                 print(self.total_monthly)
                 self.reinvest_dca += self.income_invest_accumulate(investments)
                 print(self.total_monthly)
