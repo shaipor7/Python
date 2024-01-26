@@ -54,8 +54,15 @@ def reinvestment(money_amout, interest, year, compounded):
 
 def main():
     Input = collect_investment_data()
-    print(Input)
-    print(tabulate(Input))
+    # Prepare data for tabulation
+    headers = ["Start", "After (Years)", "Return Rate (%)", "Compound", "Addition", "Contribute"]
+    rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in investments]
+
+    # Create a tabulated string
+    table = tabulate(rows, headers=headers, tablefmt="grid")
+
+    # Print the table
+    print(table)
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
     print(f"Total investment: ${income_invest_accumulate(Input)+addition(Input):,}")
