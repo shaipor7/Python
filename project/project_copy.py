@@ -54,6 +54,7 @@ def reinvestment(money_amout, interest, year, compounded):
 
 def main():
     Input = collect_investment_data()
+    print(Input)
     print(tabulate(Input))
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
