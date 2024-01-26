@@ -14,9 +14,7 @@ def addition(investments):
     investments_dca = investments.copy()
     reinvest_dca = 0
     for i in range(len(investments)):
-        total_monthly = 0
-        print(investments)
-        print(investments_dca)
+        monthly = 0
         # Assign the values
         total_year = investments[i]["after"]
         total_months = total_year * investments[i]["contribute"]
@@ -32,25 +30,23 @@ def addition(investments):
             # Number of times interest applied to this particular deposit
             compound_times = compound_frequency * time_left
 
-            # Future value of this particular depositm
+            # Future value of this particular deposit
             future_value = monthly_deposit * ((1 + annual_interest_rate / 100 / compound_frequency) ** compound_times)
 
             # Add the future value of this deposit to the total amount
-            total_monthly += future_value
+            monthly += future_value
 
         if monthly_deposit > 0:
-            total_monthly += monthly_deposit
+            monthly += monthly_deposit
 
-        # print(total_monthly)
         del investments_dca[0]
-        # print(investments_dca)
-        if len(investments_dca) > 0:
-            investments_dca[i]["start"] = total_monthly
-            # print(total_monthly)
-            reinvest_dca += income_invest_accumulate(investments_dca)
-            # print(reinvest_dca)
 
-    return round(total_monthly+reinvest_dca,2)
+        if len(investments_dca) > 0:
+            investments_dca[0]["start"] = monthly
+            reinvest_dca += income_invest_accumulate(investments_dca)
+
+
+    return round(monthly+reinvest_dca,2)
 
 # Compounded interest formula
 def reinvestment(money_amout, interest, year, compounded):
