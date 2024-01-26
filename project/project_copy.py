@@ -40,7 +40,8 @@ class Investment():
 
                 # Add the future value of this deposit to the total amount
                 self.total_monthly += future_value
-            investments = investments.pop(i)
+            del investments[i]
+            print(investments)
             if len(investments) > 0:
                 investments[i]["start"] = self.total_monthly
                 print(self.total_monthly)
