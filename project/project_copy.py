@@ -37,7 +37,7 @@ def addition(investments):
 
             # Add the future value of this deposit to the total amount
             total_monthly += future_value
-        del investments_dca[i]
+        del investments_dca[0]
         print(investments_dca)
         if len(investments_dca) > 0:
             investments_dca[i]["start"] = total_monthly
