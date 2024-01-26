@@ -6,6 +6,7 @@ def income_invest_accumulate(investments):
         total_investment_money = reinvestment(investments[i]["start"],
                                         investments[i]["return_rate"],
                                         investments[i]["after"], investments[i]["compound"])
+        # continue invest for more terms
         try:
             investments[i+1]["start"] = total_investment_money
         except:
