@@ -63,9 +63,10 @@ def main():
 
     # Print the table
     print(table)
+
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
-    print(f"Total investment: ${income_invest_accumulate(Input)+addition(Input):,}")
+    print(f"Total investments: ${income_invest_accumulate(Input)+addition(Input):,}")
 
 # Get user input as a list of dict
 def collect_investment_data():
