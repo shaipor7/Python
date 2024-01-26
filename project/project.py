@@ -1,4 +1,4 @@
-from tabulate import tabulate
+# from tabulate import tabulate
 
 def income_invest_accumulate(investments):
     total_investment_money = 0
@@ -54,16 +54,16 @@ def reinvestment(money_amout, interest, year, compounded):
     return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
 def main():
-    Input = collect_investment_data()
-    # Prepare data for tabulation
-    headers = ["Start", "After (Years)", "Return Rate (%)", "Compound", "Addition", "Contribute"]
-    rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in Input]
+    # Input = collect_investment_data()
+    # # Prepare data for tabulation
+    # headers = ["Start", "After (Years)", "Return Rate (%)", "Compound", "Addition", "Contribute"]
+    # rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in Input]
 
-    # Create a tabulated string
-    table = tabulate(rows, headers=headers, tablefmt="grid")
+    # # Create a tabulated string
+    # table = tabulate(rows, headers=headers, tablefmt="grid")
 
-    # Print the table
-    print(table)
+    # # Print the table
+    # print(table)
 
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
