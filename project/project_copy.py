@@ -1,3 +1,4 @@
+from tabulate import tabulate
 def income_invest_accumulate(investments):
     total_investment_money = 0
     for i in range(len(investments)):
