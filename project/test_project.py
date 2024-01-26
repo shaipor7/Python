@@ -44,6 +44,6 @@ def test_addition():
              , {'after': 4, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     assert addition(Input) == 20484.50
 
-    Input = [{'start': 1000, 'after': 1, 'return_rate': 10, 'compound': 12, 'addition': 1000, 'contribute': 12}
+    Input = [{'start': 1000, 'after': 5, 'return_rate': 10, 'compound': 12, 'addition': 1000, 'contribute': 12}
              , {'after': 2, 'return_rate': 5, 'compound': 12, 'addition': 500, 'contribute': 12}]
-    assert addition(Input) == 75936.89
+    assert addition(Input) == 98156.38
