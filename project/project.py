@@ -1,59 +1,132 @@
-class Tax():
-    def __init__(self):
-        # print("*****************************************")
-        # print("First part: Saving-Insurance Information")
-        # print("*****************************************")
-        self.coverage_year = 52 #int(input("Coverage Term (years): ")) # 77
-        self.payment_year =  7 #int(input("Payment Term (years): ")) # 7
-        self.payment_amout = 100000#int(input("Payment amount (Bath): ")) # 98300
-        self.protect_amout = 100000#int(input("Assured amount (Bath): ")) # 100000
-        self.final_return_money = 700000 #int(input("Final return money (Bath): ")) #700000
-        self.insurance_interest_percentage = 10 #int(input("Cash Benefit per year (percentage): ")) # 10
-        # print("*****************************************")
-        # print("Second part: Personal Information")
-        # print("*****************************************")
-        self.tax_base_percentage = 10 #int(input("what is your personal tax ? (percentage): ")) # 5
-        self.reinvestment_interest_percentage = 0 #float(input("What is your expected interest from investment? (percentage): ")) # 3
+from tabulate import tabulate
 
-        self.return_money_from_tax = self.percentage(self.protect_amout, self.tax_base_percentage)
-        self.return_money_from_insurance = self.percentage(self.protect_amout, self.insurance_interest_percentage)
+def income_invest_accumulate(investments):
+    total_investment_money = 0
+    for i in range(len(investments)):
+        total_investment_money = reinvestment(investments[i]["start"],
+                                        investments[i]["return_rate"],
+                                        investments[i]["after"], investments[i]["compound"])
+        try:
+            investments[i+1]["start"] = total_investment_money
+        except:
+            pass
+    return round(total_investment_money,2)
 
-        self.total = self.income_tax_accumulate() + self.income_invest_accumulate()
-        # output - input / year / input
-        self.times = (self.total + self.final_return_money) / (self.payment_amout * self.payment_year)
-        self.interest_per_year = ((self.total + self.final_return_money) - (self.payment_amout * self.payment_year)) \
-                                    / self.coverage_year / (self.payment_amout * self.payment_year) * 100
+def addition(investments):
+    investments_dca = investments.copy()
+    reinvest_dca = 0
+    for i in range(len(investments)):
+        monthly = 0
+        # Assign the values
+        total_year = investments[i]["after"]
+        total_months = total_year * investments[i]["contribute"]
+        compound_frequency = investments[i]["compound"]
+        annual_interest_rate = investments[i]["return_rate"]
+        monthly_deposit = investments[i]["addition"]
 
-    def __str__(self):
-        return f"{self.total} , {self.times} , {self.interest_per_year}, "
+        # Calculate the future value for each monthly deposit
+        for month in range(1, total_months):
+            # Time left until the end of the 10 years (in years)
+            time_left = (total_months - month) / investments[i]["contribute"]
 
+            # Number of times interest applied to this particular deposit
+            compound_times = compound_frequency * time_left
 
-    def percentage(self, money_amount , percentage):
-        return money_amount * percentage / 100
+            # Future value of this particular deposit
+            future_value = monthly_deposit * ((1 + annual_interest_rate / 100 / compound_frequency) ** compound_times)
 
-    def income_tax_accumulate(self):
-        total_investment_money = 0
-        for year in range(self.coverage_year , self.coverage_year - self.payment_year , -1):
-            total_investment_money += self.reinvestment(self.return_money_from_tax,
-                                                self.reinvestment_interest_percentage,
-                                                year, 1)
-        return total_investment_money
+            # Add the future value of this deposit to the total amount
+            monthly += future_value
 
-    def income_invest_accumulate(self):
-        total_investment_money = 0
-        for year in range(self.coverage_year - 1 , 0 , -1):
-            total_investment_money += self.reinvestment(self.return_money_from_insurance,
-                                                self.reinvestment_interest_percentage,
-                                                year, 1)
-        return total_investment_money
+        if monthly_deposit > 0:
+            monthly += monthly_deposit
 
-    def reinvestment(self, money_amout, interest, year, compounded):
-        return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
+        del investments_dca[0]
 
+        if len(investments_dca) > 0:
+            investments_dca[0]["start"] = monthly
+            reinvest_dca += income_invest_accumulate(investments_dca)
+
+    return round(monthly + reinvest_dca,2)
+
+# Compounded interest formula
+def reinvestment(money_amout, interest, year, compounded):
+    return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
 
 def main():
-    tax = Tax()
-    print(tax)
+    Input = collect_investment_data()
+    # Prepare data for tabulation
+    headers = ["Start", "After (Years)", "Return Rate (%)", "Compound", "Addition", "Contribute"]
+    rows = [[inv.get('start', 'N/A'), inv.get('after'), inv.get('return_rate'), inv.get('compound'), inv.get('addition'), inv.get('contribute')] for inv in Input]
+
+    # Create a tabulated string
+    table = tabulate(rows, headers=headers, tablefmt="grid")
+
+    # Print the table
+    print(table)
+
+    print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
+    print(f"Total investments from DCA: ${addition(Input):,}")
+    print(f"Total investments: ${income_invest_accumulate(Input)+addition(Input):,}")
+
+# Get user input as a list of dict
+def collect_investment_data():
+    investments = []
+    investment_data = {}
+    investment_data['start'] = get_input("Starting Amount ($): ", int)
+    while True:
+        investment_data['after'] = get_input("After (years): ", int)
+        investment_data['return_rate'] = get_input("Return rate (%): ", float)
+        investment_data['compound'] = get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
+        investment_data['addition'] = get_input("Additional Contribution ($): ", int)
+        investment_data['contribute'] = get_contribute("Contributed each (Month or Year): ")
+
+        investments.append(investment_data)
+        continued = input("Additional investment? (yes/no): ").casefold()
+        if continued in ["yes", "y"]:
+            investment_data = {}
+            pass
+        else:
+            break
+    return investments
+
+# Check the input type and re-prompt the user if it's not
+def get_input(message, input_type):
+    while True:
+        try:
+            return input_type(input(message))
+        except ValueError:
+            print(f"Invalid input. Please enter a valid {input_type.__name__}.")
+
+# Check the input type and re-prompt the user if it's not, then then convert to numbers
+def get_compound(message):
+    while True:
+        try:
+            Input = input(message).strip().casefold()
+            if Input == "a" or Input == "annually":
+                return 1
+            elif Input == "s" or Input == "semiannually":
+                return 2
+            elif Input == "q" or Input == "quarterly":
+                return 4
+            elif Input == "m" or Input == "monthly":
+                return 12
+            else : raise ValueError
+        except ValueError:
+            print("Invalid input")
+
+# Check the input type and re-prompt the user if it's not, then convert to numbers
+def get_contribute(message):
+    while True:
+        try:
+            Input = input(message).strip().casefold()
+            if Input == "m" or Input == "month":
+                return 12
+            elif Input == "y" or Input == "year":
+                return 1
+            else : raise ValueError
+        except ValueError:
+            print("Invalid input")
 
 if __name__ == "__main__":
     main()

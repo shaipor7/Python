@@ -1,4 +1,4 @@
-from project_copy import get_input, get_compound, get_contribute, income_invest_accumulate, addition, reinvestment
+from project import get_input, get_compound, get_contribute, income_invest_accumulate, addition, reinvestment
 import pytest
 
 def test_get_input(mocker):
