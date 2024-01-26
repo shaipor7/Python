@@ -45,8 +45,8 @@ class Investment():
                 print(self.total_monthly)
                 self.reinvest_dca += self.income_invest_accumulate(investments)
                 print(self.total_monthly)
-            if monthly_deposit > 0:
-                self.total_monthly += monthly_deposit
+        if monthly_deposit > 0:
+            self.total_monthly += monthly_deposit
 
         return round(self.total_monthly,2)
 
