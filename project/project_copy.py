@@ -10,7 +10,7 @@ class Investment():
                                                 self.investments[i]["after"], self.investments[i]["compound"])
             try:
                 addition = self.addition()
-                self.investments[i+1]["start"] = self.total_investment_money
+                self.investments[i+1]["start"] = self.total_investment_money + addition
             except:
                 pass
         return round(self.total_investment_money,2)
