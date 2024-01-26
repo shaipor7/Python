@@ -12,9 +12,9 @@ def income_invest_accumulate(investments):
 
 def addition(investments):
     investments_dca = investments.copy()
-    total_monthly = 0
     reinvest_dca = 0
     for i in range(len(investments)):
+        total_monthly = 0
         print(investments)
         print(investments_dca)
         # Assign the values
@@ -47,7 +47,7 @@ def addition(investments):
     if monthly_deposit > 0:
         total_monthly += monthly_deposit
 
-    return round(total_monthly,2)
+    return round(total_monthly+reinvest_dca,2)
 
 # Compounded interest formula
 def reinvestment(money_amout, interest, year, compounded):
