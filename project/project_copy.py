@@ -34,7 +34,7 @@ class Investment():
                 # Number of times interest applied to this particular deposit
                 compound_times = compound_frequency * time_left
 
-                # Future value of this particular deposit
+                # Future value of this particular depositm
                 future_value = monthly_deposit * ((1 + annual_interest_rate / 100 / compound_frequency) ** compound_times)
 
                 # Add the future value of this deposit to the total amount
