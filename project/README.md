@@ -8,16 +8,6 @@ This Python script calculates the future value of investments based on various p
 
 - **Dollar-Cost Averaging (DCA) Calculation:** Estimate the future value of investments made through DCA, including reinvestments over multiple terms.
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x
-- [tabulate](https://pypi.org/project/tabulate/) library
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/investment-calculator.git
+#### Video Demo:  <URL HERE>
+#### Description:
+TODO
