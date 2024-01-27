@@ -6,6 +6,8 @@ In today's dynamic financial landscape, making informed investment decisions is 
 
 Many investor beginner uses Dollar-Cost Averaging (DCA). DCA is a popular investment strategy that involves making regular contributions to your investment portfolio, regardless of market conditions. This disciplined approach helps mitigate the impact of market volatility and allows investors to benefit from fluctuations in asset prices over time.
 
+In addition, DCA always come with compounded interest. Compounded interest is like a snowball effect for your money. As your investments generate returns, those returns are added to your initial investment, and the total amount continues to grow. Over time, you not only earn interest on your original investment but also on the interest that has already been added.
+
 ## About This Calculator
 
 Many online investment calculators provide insights for a single investment period. However, the real world often involves multi-term investments with changing conditions. This Python script offers a comprehensive solution by allowing users to input multiple investment terms, considering compounding interest, additional contributions, and varying durations.
