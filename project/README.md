@@ -2,6 +2,7 @@
 
 #### Video Demo:  <URL HERE>
 ## Description:
+Nowadays, 
 This Python script calculates the future value of investments based on various parameters, including starting amount, return rate, compounding frequency, additional contributions, and contribution frequency. The script provides two methods for calculating the total investment: one based on a single initial investment and another based on Dollar-Cost Averaging (DCA).
 
 ## Features
@@ -34,7 +35,7 @@ This Python script calculates the future value of investments based on various p
     python project.py
 2. Enter the investment details as prompted.
 
-3. View the calculated results, including a tabulated summary of investments, total investments from the starting money, total investments from DCA, and overall total investments.
+3. View the calculated results, including a tabulated summary of investments data input, total investments from the starting money, total investments from DCA, and overall total investments.
 
 ### Input Details
 1. **Starting Amount:** Initial amount of money invested.
@@ -43,4 +44,4 @@ This Python script calculates the future value of investments based on various p
 4. **Compound:** Compounding frequency (Annually, Semiannually, Quarterly, Monthly).
 5. **Additional Contribution ($):** Additional money contributed regularly.
 6. **Contributed Each (Month or Year):** Frequency of additional contributions (Monthly or Yearly).
-7. **Continued Investment (yes/no):** 
+7. **Continued Investment (yes/no):** Asking for more term of investments
