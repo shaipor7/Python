@@ -1,18 +1,18 @@
 # Investment Calculator
 
 #### Video Demo:  <URL HERE>
-
+## Description:
 In today's dynamic financial landscape, making informed investment decisions is crucial for securing financial stability and future prosperity. Whether you are a seasoned investor or just starting your investment journey, having a tool that empowers you to calculate and plan your investments is invaluable.
 
-## Why Investment Matters
+### Why Investment Matters
 
 Investing your money wisely can help you achieve financial goals such as retirement, purchasing a home, or funding education. By harnessing the power of compounding interest and strategic investment strategies, you can grow your wealth over time and mitigate the impact of inflation.
 
-## Dollar-Cost Averaging (DCA) Strategy
+### Dollar-Cost Averaging (DCA) Strategy
 
 Dollar-Cost Averaging (DCA) is a popular investment strategy that involves making regular contributions to your investment portfolio, regardless of market conditions. This disciplined approach helps mitigate the impact of market volatility and allows investors to benefit from fluctuations in asset prices over time.
 
-## About This Calculator
+### About This Calculator
 
 Many online investment calculators provide insights for a single investment period. However, the real world often involves multi-term investments with changing conditions. This Python script offers a comprehensive solution by allowing users to input multiple investment terms, considering compounding interest, additional contributions, and varying durations.
 
