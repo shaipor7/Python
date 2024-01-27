@@ -88,7 +88,7 @@ def collect_investment_data():
         investment_data['contribute'] = get_contribute("Contributed each (Month or Year): ")
 
         investments.append(investment_data)
-        continued = input("Additional investment? (yes/no): ").casefold()
+        continued = input("Continued investment? (yes/no): ").casefold()
         if continued in ["yes", "y"]:
             investment_data = {}
             pass

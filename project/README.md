@@ -37,9 +37,10 @@ This Python script calculates the future value of investments based on various p
 3. View the calculated results, including a tabulated summary of investments, total investments from the starting money, total investments from DCA, and overall total investments.
 
 ### Input Details
-Starting Amount: Initial amount of money invested.
-After (Years): Duration of the investment in years.
-Return Rate (%): Annual return rate on the investment.
-Compound: Compounding frequency (Annually, Semiannually, Quarterly, Monthly).
-Additional Contribution ($): Additional money contributed regularly.
-Contributed Each (Month or Year): Frequency of additional contributions (Monthly or Yearly).
+1. **Starting Amount:** Initial amount of money invested.
+1. **After (Years):** Duration of the investment in years.
+3. **Return Rate (%):** Annual return rate on the investment.
+4. **Compound:** Compounding frequency (Annually, Semiannually, Quarterly, Monthly).
+5. **Additional Contribution ($):** Additional money contributed regularly.
+6. **Contributed Each (Month or Year):** Frequency of additional contributions (Monthly or Yearly).
+7. **Continued Investment (yes/no):** 
