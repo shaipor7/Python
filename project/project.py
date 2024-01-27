@@ -85,7 +85,8 @@ def collect_investment_data():
         investment_data['return_rate'] = get_input("Return rate (%): ", float)
         investment_data['compound'] = get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
         investment_data['addition'] = get_input("Additional Contribution ($): ", int)
-        investment_data['contribute'] = get_contribute("Contributed each (Month or Year): ")
+        if investment_data['addition'] != 0:
+            investment_data['contribute'] = get_contribute("Contributed each (Month or Year): ")
 
         investments.append(investment_data)
         continued = input("Continued investment? (yes/no): ").casefold()
