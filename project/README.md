@@ -4,7 +4,7 @@
 ## Why this Project Matters:
 In today's dynamic financial landscape, making informed investment decisions is crucial for securing financial stability and future prosperity. Whether you are a seasoned investor or just starting your investment journey, having a tool that empowers you to calculate and plan your investments is invaluable.
 
-Dollar-Cost Averaging (DCA). DCA is a popular investment strategy that involves making regular contributions to your investment portfolio, regardless of market conditions. This disciplined approach helps mitigate the impact of market volatility and allows investors to benefit from fluctuations in asset prices over time.
+Many investor beginner uses Dollar-Cost Averaging (DCA). DCA is a popular investment strategy that involves making regular contributions to your investment portfolio, regardless of market conditions. This disciplined approach helps mitigate the impact of market volatility and allows investors to benefit from fluctuations in asset prices over time.
 
 ### About This Calculator
 
