@@ -74,6 +74,6 @@ In project.py file, there are many functions:
 
     - `get_compound(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Annually, Semiannually, Quarterly, Monthly*. It is used to collect **Compound**
 
-    - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Compound**
+    - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**
 
 If the user input wrong data, the program is going to prompt the user as
