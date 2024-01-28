@@ -63,17 +63,18 @@ The project folder contrains 2 scripts, the first one is project.py which includ
 
 In project.py file, there are many functions:
 
-1. `collect_investment_data():` prompt a user to input the investment data, then save it as a list of dictionaries. In addition, this function includes other functions to check the user input and tranfroms it for calculation such as:
+1. `collect_investment_data():` prompt a user to input the investment data, then remember it as a list of dictionary(ies if there are many investment terms). In addition, this function includes other functions to check the user input and tranfroms it for calculation such as:
 
     - `get_input(message, input_type):`Prompt a user as `message`, then check the user input type and re-prompt the user if it is not same as `input_type`. It is used to collect
         - **Starting Amount**
         - **After (Years)**
         - **Return Rate (%)**
         - **Additional Contribution ($)**
-        - **Continued Investment (yes/no)**
+        - **Continued Investment (yes/no)**.
 
-    - `get_compound(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Annually, Semiannually, Quarterly, Monthly*. It is used to collect **Compound**
+    - `get_compound(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Annually, Semiannually, Quarterly, Monthly*. It is used to collect **Compound**.
 
-    - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**
+    - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**.
 
+2. `income_invest_accumulate(investments):` Interpret the input data from `collect_investment_data()`, then calculate compound interest
 If the user input wrong data, the program is going to prompt the user as
