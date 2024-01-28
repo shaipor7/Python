@@ -4,7 +4,8 @@ def main():
 
 
 def square(n):
-    return n * n
+    print(n * n)
+    # return n * n
 
 
 main()
