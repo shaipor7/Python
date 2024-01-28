@@ -1,4 +1,4 @@
-from project import get_input, get_compound, get_contribute, income_invest_accumulate, addition, reinvestment
+from project import get_input, get_compound, get_contribute, starting_term, addition, reinvestment
 import pytest
 
 def test_get_input(mocker):
@@ -17,13 +17,13 @@ def test_get_contribute(mocker):
     assert get_contribute("Enter: ") == 12
     assert get_contribute("Enter: ") == 1
 
-def test_income_invest_accumulate():
+def test_starting_term():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert income_invest_accumulate(Input) == 2707.04
+    assert starting_term(Input) == 2707.04
 
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert income_invest_accumulate(Input) == 7328.07
+    assert starting_term(Input) == 7328.07
 
 def test_addition():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]

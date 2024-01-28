@@ -1,7 +1,7 @@
 from tabulate import tabulate
 
 # Function to calculate starting amount of money
-def income_invest_accumulate(investments):
+def starting_term(investments):
     total_investment_money = 0
     for i in range(len(investments)):
         total_investment_money = reinvestment(investments[i]["start"],
@@ -48,7 +48,7 @@ def addition(investments):
 
         if len(investments_dca) > 0:
             investments_dca[0]["start"] = monthly
-            reinvest_dca += income_invest_accumulate(investments_dca)
+            reinvest_dca += starting_term(investments_dca)
 
     return round(monthly + reinvest_dca,2)
 
@@ -74,9 +74,9 @@ def main():
     # Print the table
     print(table)
     print(f"Total contribute money: ${total_contribute(Input)}")
-    print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
+    print(f"Total investments from starting money: ${starting_term(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
-    print(f"End Balance: ${income_invest_accumulate(Input)+addition(Input):,.2f}")
+    print(f"End Balance: ${starting_term(Input)+addition(Input):,.2f}")
 
 
 # Get user input as a list of dict
