@@ -9,7 +9,7 @@ def income_invest_accumulate(investments):
                                         investments[i]["after"], investments[i]["compound"])
         # Continue invest for more terms
         try:
-            investments[i+1]["start"] = total_investment_money
+            investments[i+1]["start"] += total_investment_money
         except:
             pass
     return round(total_investment_money,2)
@@ -53,7 +53,11 @@ def addition(investments):
     return round(monthly + reinvest_dca,2)
 
 def total_contribute(investments):
-    
+    total = 0
+    for i in range(len(investments)):
+        total += investments[i]['contribute'] * investments[i]['addition']
+    return total
+
 # Compounded interest formula
 def reinvestment(money_amout, interest, year, compounded):
     return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
@@ -78,8 +82,8 @@ def main():
 def collect_investment_data():
     investments = []
     investment_data = {}
-    investment_data['start'] = get_input("Starting Amount ($): ", int)
     while True:
+        investment_data['start'] = get_input("Starting Amount ($): ", int)
         investment_data['after'] = get_input("After (years): ", int)
         investment_data['return_rate'] = get_input("Return rate (%): ", float)
         investment_data['compound'] = get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
