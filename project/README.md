@@ -65,7 +65,7 @@ In project.py file, there are many functions:
 
 1. `collect_investment_data():` prompt a user to input the investment data, then save it as a list of dictionaries. In addition, this function includes other functions to check the user input and tranfroms it for calculation such as:
 
-    `get_input(message, input_type):` Check the user input type and re-prompt the user if it is not a appropiate data. It is used to collect **Starting Amount, After (Years), Return Rate (%), Additional Contribution ($), Continued Investment (yes/no)**
+        `get_input(message, input_type):`Prompt a user as `message`, then check the user input type and re-prompt the user if it is not same as `input_type`. It is used to collect **Starting Amount, After (Years), Return Rate (%), Additional Contribution ($), Continued Investment (yes/no)**
 
     `get_compound():`
 
