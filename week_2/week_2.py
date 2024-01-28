@@ -1,9 +1,9 @@
 def main():
-    Input = input("")
-
+    Input = "por :)"
+    print(convert(Input))
 
 def convert(text):
-    A = text.replace(";))" , "🙂")
+    A = text.replace(":)" , "🙂")
     return A
 
 
