@@ -9,7 +9,7 @@ def income_invest_accumulate(investments):
                                         investments[i]["after"], investments[i]["compound"])
         # Continue invest for more terms
         try:
-            investments[i+1]["start"] += total_investment_money
+            investments[i+1]["start"] = total_investment_money
         except:
             pass
     return round(total_investment_money,2)
@@ -73,18 +73,18 @@ def main():
 
     # Print the table
     print(table)
-
+    print(f"Total contribute money: ${total_contribute(Input)}")
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
     print(f"End Balance: ${income_invest_accumulate(Input)+addition(Input):,}")
-    print()
+
 
 # Get user input as a list of dict
 def collect_investment_data():
     investments = []
     investment_data = {}
+    investment_data['start'] = get_input("Starting Amount ($): ", int)
     while True:
-        investment_data['start'] = get_input("Starting Amount ($): ", int)
         investment_data['after'] = get_input("After (years): ", int)
         investment_data['return_rate'] = get_input("Return rate (%): ", float)
         investment_data['compound'] = get_compound("Compound (Annually, Semiannually, Quarterly, Monthly): ")
