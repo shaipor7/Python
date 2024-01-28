@@ -55,5 +55,8 @@ Many online investment calculators provide insights for a single investment peri
 
 ### For example
 
-```bash
+<video src="example.mp4" controls title="example_video"></video>
+
+## In Details
+
 
