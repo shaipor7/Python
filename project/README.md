@@ -8,6 +8,8 @@ Many investor beginner uses Dollar-Cost Averaging (DCA). DCA is a popular invest
 
 In addition, DCA always come with compounded interest. Compounded interest is like a snowball effect for your money. As your investments generate returns, those returns are added to your initial investment, and the total amount continues to grow. Over time, you not only earn interest on your original investment but also on the interest that has already been added.
 
+
+
 ## About This Calculator
 
 Many online investment calculators provide insights for a single investment period. However, the real world often involves multi-term investments with changing conditions. This Python script offers a comprehensive solution by allowing users to input multiple investment terms, considering compounding interest, additional contributions, and varying durations.
@@ -55,7 +57,7 @@ Many online investment calculators provide insights for a single investment peri
 
 ### For example
 
-<video src="example.mp4" controls title="example_video"></video>
+https://github.com/code50/116163643/assets/116163643/bc1e460b-8eb7-40f7-be20-871e0f6b1fe2
 
 ## In Details
 
