@@ -76,4 +76,4 @@ In project.py file, there are many functions:
 
     - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**.
 
-2. `income_invest_accumulate(investments):` Interpret the input data from `collect_investment_data()`, then calculate a compound interest
+2. `income_invest_accumulate(investments):` Interpret the input data from `collect_investment_data()`, then calculate a compound interest by using formula in `reinvestment(money_amout, interest, year, compounded)`
