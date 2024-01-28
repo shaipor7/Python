@@ -76,7 +76,7 @@ def main():
     print(f"Total contribute money: ${total_contribute(Input)}")
     print(f"Total investments from starting money: ${income_invest_accumulate(Input):,}")
     print(f"Total investments from DCA: ${addition(Input):,}")
-    print(f"End Balance: ${income_invest_accumulate(Input)+addition(Input):,}")
+    print(f"End Balance: ${income_invest_accumulate(Input)+addition(Input):,.2f}")
 
 
 # Get user input as a list of dict
