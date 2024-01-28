@@ -32,13 +32,10 @@ def addition(investments):
         for month in range(1, total_months):
             # Time left until the end of the X years
             time_left = (total_months - month) / investments[i]["contribute"]
-
             # Conver to number of times interest
             compound_times = compound_frequency * time_left
-
             # Future value of this particular deposit
             future_value = monthly_deposit * ((1 + annual_interest_rate / 100 / compound_frequency) ** compound_times)
-
             # Add the future value to the total amount
             monthly += future_value
 
@@ -55,6 +52,8 @@ def addition(investments):
 
     return round(monthly + reinvest_dca,2)
 
+def total_contribute(investments):
+    
 # Compounded interest formula
 def reinvestment(money_amout, interest, year, compounded):
     return money_amout * (1 + interest / 100 / compounded) ** (year * compounded)
