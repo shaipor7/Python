@@ -59,26 +59,26 @@ Many online investment calculators provide insights for a single investment peri
 
 ## In Details
 
-The project folder contains 2 scripts: the first one is `project.py, which includes the main function and other functions to calculate compounded interest, and the second one is test_project.py, which includes test functions to assert its correctness.
+The project folder contains 2 scripts: the first one is `project.py`, which includes the main function and other functions to calculate compounded interest, and the second one is `test_project.py`, which includes test functions to assert its correctness.
 
 In the project.py file, there are several functions:
 
 1. `collect_investment_data():`Prompts a user to input the investment data, then stores it as a list of dictionaries (or multiple dictionaries if there are many investment terms). Additionally, this function includes other functions to check the user input and transform it for calculation, such as:
 
-    - `get_input(message, input_type):` Prompts a user with the specified message, then checks the user input type and re-prompts the user if it does not match the specified input_type. It is used to collect:
+    - `get_input(message, input_type):`Prompts a user with the specified `message`, then checks the user input type and re-prompts the user if it does not match the specified `input_type`. It is used to collect:
         - **Starting Amount**
         - **After (Years)**
         - **Return Rate (%)**
         - **Additional Contribution ($)**
         - **Continued Investment (yes/no)**.
 
-    - `get_compound(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Annually, Semiannually, Quarterly, Monthly*. It is used to collect **Compound**.
+    - `get_compound(message):`Prompts a user with the specified `message`, then checks the user input and re-prompts the user if it does not match the first letter or full text of *Annually, Semiannually, Quarterly, Monthly*. It is used to collect **Compound**.
 
-    - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**.
+    - `get_contribute(message):`Prompts a user with the specified `message`, then checks the user input and re-prompts the user if it does not match the first letter or full text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**.
 
-2. `starting_term(investments):` Interpret the input data from `collect_investment_data()`, then calculate and return a compound interest form starting amount by using formula in `reinvestment(money_amout, interest, year, compounded)`.
+2. `starting_term(investments):`Interprets the input data from `collect_investment_data()`, then calculates and returns compound interest from the starting amount using the formula in `reinvestment(money_amout, interest, year, compounded)`.
 
-3. `dca_term(investments):` Calculate and return a compound interest form DCA amount.
+3. `dca_term(investments):`Calculates and returns compound interest from DCA amount.
 
-4. `total_contribute(investments):` Calculate and return total contribute amount.
+4. `total_contribute(investments):`Calculates and returns the total contributed amount.
 
