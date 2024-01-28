@@ -1,7 +1,9 @@
 def main():
-    print(convert(input("")))
+    Input = input("")
+    print(convert(Input))
 
 def convert(text):
-    return text.replace(":)" , "🙂").replace(":(" ,"🙁")
+    A = text.replace(":)" , "🙂").replace(":(" ,"🙁")
+    return A
 
 main()
