@@ -1,9 +1,6 @@
-def main():
-    Input = input("")
-    print(convert(Input))
+x = input("What's x? ")
+y = input("What's y? ")
 
-def convert(text):
-    A = text.replace(":)" , "🙂").replace(":(" ,"🙁")
-    return A
+z = x + y
 
-main()
+print(z)
