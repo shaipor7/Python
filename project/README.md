@@ -63,4 +63,4 @@ The project folder contrains 2 scripts, the first one is project.py which includ
 
 In project.py file, there are many functions:
 
-1. collect_investment_data()
+1. `collect_investment_data():` prompt a user 
