@@ -1,13 +1,10 @@
 def main():
-    # Output using our own function
-    name = input("What's your name? ")
-    hello(name)
+    x = int(input("What's x? "))
+    print("x squared is", square(x))
 
-    hello()
 
-# Create our own function
-def hello(to="world"):
-    print("hello,", to)
+def square(n):
+    return n * n
 
-main()
+
 main()
