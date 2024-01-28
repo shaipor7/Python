@@ -76,8 +76,9 @@ In project.py file, there are many functions:
 
     - `get_contribute(message):` Prompt a user as `message`, then check the user input and re-prompt the user if it is not first letter or full-text of *Month, Year*. It is used to collect **Contributed Each (Month or Year)**.
 
-2. `starting_term(investments):` Interpret the input data from `collect_investment_data()`, then calculate and return a compound interest form starting amount by using formula in `reinvestment(money_amout, interest, year, compounded)`
+2. `starting_term(investments):` Interpret the input data from `collect_investment_data()`, then calculate and return a compound interest form starting amount by using formula in `reinvestment(money_amout, interest, year, compounded)`.
 
-3. `dca_term(investments):` Interpret the input data from `collect_investment_data()`, then calculate and return a compound interest form DCA amount
+3. `dca_term(investments):` Calculate and return a compound interest form DCA amount.
 
-4. `total_contribute(investments):`
+4. `total_contribute(investments):` Calculate and return total contribute amount.
+
