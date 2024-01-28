@@ -1,5 +1,5 @@
 def main():
-    Input = "por :)"
+    Input = input("")
     print(convert(Input))
 
 def convert(text):
