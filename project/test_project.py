@@ -22,7 +22,7 @@ def test_income_invest_accumulate():
     assert income_invest_accumulate(Input) == 2707.04
 
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
-             , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
+             , {'start': 0, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     assert income_invest_accumulate(Input) == 7328.07
 
 def test_addition():
