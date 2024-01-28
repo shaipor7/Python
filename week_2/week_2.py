@@ -1,5 +1,5 @@
 def main():
-    text = ":)"
+    text = input("")
     print(convert(text))
 
 def convert(a):
