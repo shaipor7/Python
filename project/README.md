@@ -33,7 +33,7 @@ Many online investment calculators provide insights for a single investment peri
 1. Clone the repository:
 
     ```bash
-   git clone https://github.com/code50/116163643.git
+   git clone https://github.com/shaipor7/CS50.git
 2. Install required libraries:
     ```bash
     pip install tabulate
