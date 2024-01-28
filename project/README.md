@@ -57,7 +57,8 @@ Many online investment calculators provide insights for a single investment peri
 
 ### For example
 
-https://github.com/code50/116163643/assets/116163643/bc1e460b-8eb7-40f7-be20-871e0f6b1fe2
+https://github.com/shaipor7/Python/assets/116163643/a6207406-30dc-4782-a6ef-abca7d349909
+
 
 ## In Details
 
