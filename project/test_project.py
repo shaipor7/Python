@@ -1,4 +1,4 @@
-from project import get_input, get_compound, get_contribute, starting_term, addition, reinvestment
+from project import get_input, get_compound, get_contribute, starting_term, dca_term, reinvestment
 import pytest
 
 def test_get_input(mocker):
@@ -25,25 +25,25 @@ def test_starting_term():
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
     assert starting_term(Input) == 7328.07
 
-def test_addition():
+def test_dca_term():
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert addition(Input) == 20484.5
+    assert dca_term(Input) == 20484.5
 
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert addition(Input) == 75936.89
+    assert dca_term(Input) == 75936.89
 
     Input = [{'start': 1000, 'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 10, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert addition(Input) == 226048.80
+    assert dca_term(Input) == 226048.80
 
     Input = [{'start': 1000, 'after': 1, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 2, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 3, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}
              , {'after': 4, 'return_rate': 10.0, 'compound': 12, 'addition': 100, 'contribute': 12}]
-    assert addition(Input) == 20484.50
+    assert dca_term(Input) == 20484.50
 
     Input = [{'start': 1000, 'after': 5, 'return_rate': 10, 'compound': 12, 'addition': 1000, 'contribute': 12}
              , {'after': 2, 'return_rate': 5, 'compound': 12, 'addition': 500, 'contribute': 12}]
-    assert addition(Input) == 98156.38
+    assert dca_term(Input) == 98156.38

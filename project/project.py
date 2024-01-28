@@ -15,7 +15,7 @@ def starting_term(investments):
     return round(total_investment_money,2)
 
 # Function to calculate DCA
-def addition(investments):
+def dca_term(investments):
 
     # Assign the values
     investments_dca = investments.copy()
@@ -75,8 +75,8 @@ def main():
     print(table)
     print(f"Total contribute money: ${total_contribute(Input)}")
     print(f"Total investments from starting money: ${starting_term(Input):,}")
-    print(f"Total investments from DCA: ${addition(Input):,}")
-    print(f"End Balance: ${starting_term(Input)+addition(Input):,.2f}")
+    print(f"Total investments from DCA: ${dca_term(Input):,}")
+    print(f"End Balance: ${starting_term(Input)+dca_term(Input):,.2f}")
 
 
 # Get user input as a list of dict
