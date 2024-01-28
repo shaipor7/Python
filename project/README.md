@@ -59,13 +59,13 @@ Many online investment calculators provide insights for a single investment peri
 
 ## In Details
 
-The project folder contrains 2 scripts, the first one is project.py which includes main function and other function to calculate the compounded interest, the second one is test_project.py which includes test functions to assert it is correct.
+The project folder contains 2 scripts: the first one is `project.py, which includes the main function and other functions to calculate compounded interest, and the second one is test_project.py, which includes test functions to assert its correctness.
 
-In project.py file, there are many functions:
+In the project.py file, there are several functions:
 
-1. `collect_investment_data():` prompt a user to input the investment data, then remember it as a list of dictionary(ies if there are many investment terms). In addition, this function includes other functions to check the user input and tranfroms it for calculation such as:
+1. `collect_investment_data():`Prompts a user to input the investment data, then stores it as a list of dictionaries (or multiple dictionaries if there are many investment terms). Additionally, this function includes other functions to check the user input and transform it for calculation, such as:
 
-    - `get_input(message, input_type):`Prompt a user as `message`, then check the user input type and re-prompt the user if it is not same as `input_type`. It is used to collect
+    - `get_input(message, input_type):` Prompts a user with the specified message, then checks the user input type and re-prompts the user if it does not match the specified input_type. It is used to collect:
         - **Starting Amount**
         - **After (Years)**
         - **Return Rate (%)**
