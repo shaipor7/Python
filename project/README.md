@@ -59,4 +59,8 @@ Many online investment calculators provide insights for a single investment peri
 
 ## In Details
 
+The project folder contrains 2 scripts, the first one is project.py which includes main function and other function to calculate the compounded interest, the second one is test_project.py which includes test functions to assert it is correct.
 
+In project.py file, there are many functions:
+
+1. collect_investment_data()
