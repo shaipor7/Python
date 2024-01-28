@@ -9,5 +9,5 @@ def main():
 def hello(to="world"):
     print("hello,", to)
 
-
-
+main()
+main()
